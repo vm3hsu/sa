@@ -23,6 +23,24 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
+<style type="text/css">
+    #nav {
+        position: relative; width: 20%; height: auto; top: 0; right: auto; bottom: auto; left: 0; color:black
+    }
+
+    #top{
+        position: relative; width: auto; height: 30%; top: 0; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+
+    #mid{
+        position: relative; width: auto; height: 30%; top: 13%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+
+    #bot{
+        position: relative; width: auto; height: auto; top: 26%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+</style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -222,15 +240,15 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="book.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Blog</h2>
+                        <h2>QA</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
-                            <span>Blog</span>
+                            <span>QA</span>
                         </div>
                     </div>
                 </div>
@@ -308,115 +326,43 @@
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-1.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-4.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-4.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">The Moment You Need To Remove Garlic From The Menu</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-6.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text">
-                                    <ul>
-                                        <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
-                                    </ul>
-                                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
-                                        quaerat </p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="product__pagination blog__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                            </div>
+                    <span style="font-family:DFKai-sb;">
+                    <div id="top">
+                        <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象貼上壞寶寶貼紙
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <form>
+                            投訴對象名稱：<input type="text" name="UserName">
+                            <br><br>
+                            投訴對象身分：
+                            <input type="radio" name="UserType" walue="Type1">買家
+                            <input type="radio" name="UserType" walue="Type1">賣家
+                            <br><br>
+                            投訴原因(請詳細說明):<br><textarea name="comments" rows="5" cols="60"></textarea>
+                            <input type="submit" value="送出資料">
+                            <br>
+                        </form>
+                    </div>
+                    <div id="mid">
+                        <h3>回饋專區___請告訴我們的工程師你對於此網站的改善與建議
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <form>
+                            歡迎你們提供對於這個平台更好的改善方式：<br><br><textarea name="comments" rows="8" cols="60"></textarea>
+                             <input type="submit" value="送出資料">
+                        </form>
+                    </div>
+                    <div id="bot">
+                        <h3>有想買的書卻尚未有人賣？
+                        <br>
+                        填寫以下表格->自動刊登在"索書專區"->讓賣家們看到你的需求並上架！
+                        <hr size="2px" align="top" width="100%"></h3>
+                            <form>
+                                書名(盡量完整)：<input type="text" name="BookName">
+                                <br><br>
+                                上傳書的照片(可放網路圖)：
+                                <input type="submit" value="Upload">
+                            </form>
+                    </div>
+                    </span>
                         </div>
                     </div>
                 </div>
