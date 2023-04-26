@@ -305,14 +305,30 @@
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
+
+
+                        <div style="width:auto;
+                                    height:100px;  
+                                    margin: auto;
+                                    margin-bottom: 20px; padding: 10px;height: auto;
+                                    font-size:25px;"><b>
+                            在平台上找不到想要買的書?</b>
+                        </div>
+                    </div>
+                    <button style="margin-bottom: 20px; margin-left:38%;">點此上傳你想買的書!</button>
+
+                    <hr style="border: 2px solid gray;"/>
+
+
+                    <div class="row">
                         <div style="width:95%;
                                     height:100px;  
-                                    background-color:white;
-                                    border-radius:15px;border:2px green solid;margin: auto;
-                                    margin-bottom: 20px; padding: 10px;height: auto;
-                                    font-size:18px;"><b>
-                            這個專區是有買家想買的書籍，但卻尚未在平台上出現。
-                            若有賣家想上架的話歡迎點選"我要上架"</b>
+                                    background-color:#F0F0F0		;
+                                    border-radius:15px;border:2px white solid;margin: auto;
+                                    margin-bottom: 30px; padding: 10px;height: auto;
+                                    font-size:18px;"><em>
+                            而以下專區陳列的是有買家想買的書籍，但卻尚未在平台上出現。
+                            若有賣家想上架的話歡迎點選"我要上架"</em>
                         </div>
                     </div>
                     <div class="row">
