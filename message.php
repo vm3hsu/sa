@@ -28,7 +28,7 @@
 </tr>
 <tr>
   <td align=right bgcolor=#C6D7E7>
-      | <a href="register.php">回查詢</a> |
+      | <a href="index.php">回查詢</a> |
   </td>
 </tr>
 </table>

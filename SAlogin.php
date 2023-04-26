@@ -219,21 +219,22 @@
     <div class="container">
       <div class="row">
         <div style="background-color:#F5F5F5;">
-
+          <form action="logincheck.php" method="post" role="form" >
             <div class="row">
+            
               <div class="col-lg-12" style="margin-bottom: 20px; margin-left: 30%; margin-top: 10%;">
                 <span><font size="6"><b>會員、管理者登入</b></font></span>
               </div>
               <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
                   <fieldset>
                       <label for="Name" class="form-label"><font size="4">帳號</font></label>
-                      <input type="text" name="Number" class="Number" autocomplete="on" placeholder="請輸入學號"required>
+                      <input type="text" name="account" class="Number" autocomplete="on" placeholder="請輸入學號"required>
                   </fieldset>
               </div>
               <div class="col-lg-6" style="margin-bottom: 30px; margin-left:33%; ">
                 <fieldset>
                     <label for="Number" class="form-label"><font size="4">密碼</font></label>
-                    <input type="Password" name="Password" class="Password" autocomplete="on" placeholder="請輸入密碼" required>
+                    <input type="Password" name="password" class="Password" autocomplete="on" placeholder="請輸入密碼" required>
                 </fieldset>
               </div>
               
@@ -241,7 +242,7 @@
               
               <div class="col-lg-12" style="margin-bottom: 100px; margin-left:42%; ">                        
                   <fieldset>
-                      <button class="main-button">登  入</button>
+                  <input type="submit" value="登入">
                   </fieldset>
               </div>
             </div>
