@@ -23,14 +23,27 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #login{
-        position: absolute; width: auto; height: auto; top: auto; right: 0; bottom: 10%; left: auto;
+    #login {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: 0;
+        bottom: 10%;
+        left: auto;
     }
-    #menu{
-        position: relative; width: auto; height: auto; top: auto; right: auto; bottom: auto; left: 5%;
+
+    #menu {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 5%;
     }
-    
 </style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -140,8 +153,12 @@
                             <span>Welcome to second hand bookstore for FJU</span>
                             <h2>輔仁2手書平台</h2>
                             <p>這個平台歡迎每個人上架、購買二手書，<br />我們將會給您最簡單以及簡潔的頁面，<br>但卻擁有最好的二手書交易經驗。</p>
-                            <a href="#" class="primary-btn"><font size="4">我要買書</font></a>
-                            <a href="#" class="primary-btn"><font size="4">我要賣書</font></a>
+                            <a href="#" class="primary-btn">
+                                <font size="4">我要買書</font>
+                            </a>
+                            <a href="#" class="primary-btn">
+                                <font size="4">我要賣書</font>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -332,7 +349,7 @@
     </section>
     <!-- Featured Section End -->
 
- 
+
 
     <!-- Latest Product Section Begin -->
     <section class="latest-product spad">
@@ -595,9 +612,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>

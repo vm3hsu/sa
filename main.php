@@ -69,10 +69,18 @@
                 <div class="col-lg-7">
                     <div class="header__cart">
                         <table id="login">
-                            <tr>
-                                <td>[<a href=#>登入</a>]</td>
-                                <td>[<a href=#>註冊</a>]</td>
-                            </tr>
+                            <?php
+                                echo $_SESSION['name'];
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
+                                }
+                                else
+                                {
+                                    echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href=#>登出</a>]</td></tr>";
+                                }
+                            ?>
+                            
                         </table>
                     </div>
                 </div>

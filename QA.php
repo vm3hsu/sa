@@ -23,29 +23,69 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #login{
-        position: absolute; width: auto; height: auto; top: auto; right: 0; bottom: 10%; left: auto;
+    #login {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: 0;
+        bottom: 10%;
+        left: auto;
     }
-    #menu{
-        position: relative; width: auto; height: auto; top: auto; right: auto; bottom: auto; left: 5%;
+
+    #menu {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 5%;
     }
-    
 </style>
 <style type="text/css">
     #nav {
-        position: relative; width: 20%; height: auto; top: 0; right: auto; bottom: auto; left: 0; color:black
+        position: relative;
+        width: 20%;
+        height: auto;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        color: black
     }
 
-    #top{
-        position: relative; width: auto; height: 30%; top: 0; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    #top {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
     }
 
-    #mid{
-        position: relative; width: auto; height: 30%; top: 13%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    #mid {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 13%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
     }
 
-    #bot{
-        position: relative; width: auto; height: auto; top: 26%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    #bot {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 26%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
     }
 </style>
 
@@ -135,7 +175,7 @@
                             <span>依學院搜尋</span>
                         </div>
                         <ul>
-                        <li><a href="#">文學院</a></li>
+                            <li><a href="#">文學院</a></li>
                             <li><a href="#">藝術學院</a></li>
                             <li><a href="#">傳播學院</a></li>
                             <li><a href="#">教育學院</a></li>
@@ -154,47 +194,49 @@
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
-                    <span style="font-family:DFKai-sb;">
-                    <div id="top">
-                        <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象貼上壞寶寶貼紙
-                        <hr size="2px" align="top" width="100%"></h3>
-                        <form>
-                            投訴對象名稱：<input type="text" name="UserName">
-                            <br><br>
-                            投訴對象身分：
-                            <input type="radio" name="UserType" walue="Type1">買家
-                            <input type="radio" name="UserType" walue="Type1">賣家
-                            <br><br>
-                            投訴原因(請詳細說明):<br><textarea name="comments" rows="5" cols="60"></textarea>
-                            <input type="submit" value="送出資料">
-                            <br>
-                        </form>
-                    </div>
-                    <div id="mid">
-                        <h3>回饋專區___請告訴我們的工程師你對於此網站的改善與建議
-                        <hr size="2px" align="top" width="100%"></h3>
-                        <form>
-                            歡迎你們提供對於這個平台更好的改善方式：<br><br><textarea name="comments" rows="8" cols="60"></textarea>
-                             <input type="submit" value="送出資料">
-                        </form>
-                    </div>
-                    <div id="bot">
-                        <h3>有想買的書卻尚未有人賣？
-                        <br>
-                        填寫以下表格->自動刊登在"索書專區"->讓賣家們看到你的需求並上架！
-                        <hr size="2px" align="top" width="100%"></h3>
-                            <form>
-                                書名(盡量完整)：<input type="text" name="BookName">
-                                <br><br>
-                                上傳書的照片(可放網路圖)：
-                                <input type="submit" value="Upload">
-                            </form>
-                    </div>
-                    </span>
-                        </div>
+                        <span style="font-family:DFKai-sb;">
+                            <div id="top">
+                                <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象貼上壞寶寶貼紙
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <form>
+                                    投訴對象名稱：<input type="text" name="UserName">
+                                    <br><br>
+                                    投訴對象身分：
+                                    <input type="radio" name="UserType" walue="Type1">買家
+                                    <input type="radio" name="UserType" walue="Type1">賣家
+                                    <br><br>
+                                    投訴原因(請詳細說明):<br><textarea name="comments" rows="5" cols="60"></textarea>
+                                    <input type="submit" value="送出資料">
+                                    <br>
+                                </form>
+                            </div>
+                            <div id="mid">
+                                <h3>回饋專區___請告訴我們的工程師你對於此網站的改善與建議
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <form>
+                                    歡迎你們提供對於這個平台更好的改善方式：<br><br><textarea name="comments" rows="8" cols="60"></textarea>
+                                    <input type="submit" value="送出資料">
+                                </form>
+                            </div>
+                            <div id="bot">
+                                <h3>有想買的書卻尚未有人賣？
+                                    <br>
+                                    填寫以下表格->自動刊登在"索書專區"->讓賣家們看到你的需求並上架！
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <form>
+                                    書名(盡量完整)：<input type="text" name="BookName">
+                                    <br><br>
+                                    上傳書的照片(可放網路圖)：
+                                    <input type="submit" value="Upload">
+                                </form>
+                            </div>
+                        </span>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </section>
     <!-- Hero Section End -->
@@ -204,7 +246,7 @@
     <section class="blog spad">
         <div class="container">
             <div class="row">
-                
+
             </div>
         </div>
     </section>
@@ -267,9 +309,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>

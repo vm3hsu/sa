@@ -23,14 +23,27 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #login{
-        position: absolute; width: auto; height: auto; top: auto; right: 0; bottom: 10%; left: auto;
+    #login {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: 0;
+        bottom: 10%;
+        left: auto;
     }
-    #menu{
-        position: relative; width: auto; height: auto; top: auto; right: auto; bottom: auto; left: 5%;
+
+    #menu {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 5%;
     }
-    
 </style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -136,111 +149,114 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
-                    <span style="font-family:DFKai-sb;">
-                    <div id="top">
-                        <h3>--------
-                        <hr size="2px" align="top" width="100%"></h3>
-                        <h3>我是買家
-                        <hr size="2px" align="top" width="100%">
-                        </h3>
-                        <table class="table table-bordered border-warning ">
-  <thead>
-  <tr>
-	<th>你的購物車</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-	<td>    
-    <input type="checkbox" name="comic" value="a">&nbsp;2隻老虎____黃偉柔<br>
-      <input type="checkbox" name="comic" value="b">&nbsp;黃色的巧虎____陳俊宇<br>
-	  <input type="checkbox" name="comic" value="c">&nbsp;名偵探柯南<br>
-      <div align=right>
-      <input type="submit" value="從車裡刪除">
-      <input type="submit" value="確認購買">
-    </td>
-  </tr>
-  
-  </tbody>
-  </table>
+                        <span style="font-family:DFKai-sb;">
+                            <div id="top">
+                                <h3>--------
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <h3>我是買家
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <table class="table table-bordered border-warning ">
+                                    <thead>
+                                        <tr>
+                                            <th>你的購物車</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" name="comic" value="a">&nbsp;2隻老虎____黃偉柔<br>
+                                                <input type="checkbox" name="comic" value="b">&nbsp;黃色的巧虎____陳俊宇<br>
+                                                <input type="checkbox" name="comic" value="c">&nbsp;名偵探柯南<br>
+                                                <div align=right>
+                                                    <input type="submit" value="從車裡刪除">
+                                                    <input type="submit" value="確認購買">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
 
 
 
-  <table class="table table-bordered border-warning table-hover">
-  <thead>
-  <tr>
-	<th>確認購買書籍的賣家聯絡方式</th>
-	<th>賣家是否接單</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-	<td>2隻老虎____黃偉柔,Line ID:09XXXXX985</td>
-	<td>否,您還不能聯絡賣家</td>
-  </tr>
-  <tr>
-	<td>黃色的巧虎____陳俊宇,IG:IAM_STUPID</td>
-	<td>是,您已可以聯絡賣家</td>
-  </tr>
-  
-  </tbody>
-  </table>
-                    </div>
-                    <div id="mid">
-                        <h3>我是賣家<br>
-                        <hr size="2px" align="top" width="100%"></h3>
-                        <p>上架欲賣出書籍請點此填寫表單</p>
-                        
-                        <table class="table table-bordered border-warning table-hover">
-  <thead>
+                                <table class="table table-bordered border-warning table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>確認購買書籍的賣家聯絡方式</th>
+                                            <th>賣家是否接單</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2隻老虎____黃偉柔,Line ID:09XXXXX985</td>
+                                            <td>否,您還不能聯絡賣家</td>
+                                        </tr>
+                                        <tr>
+                                            <td>黃色的巧虎____陳俊宇,IG:IAM_STUPID</td>
+                                            <td>是,您已可以聯絡賣家</td>
+                                        </tr>
 
-  <tr>
-	<th>已上架書籍</th>
-    <th align="right">書籍狀態</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>喵咪吃罐頭</td>
-    <td>  
-      <input type="button" value="下架此書">
-      <input type="button" value="已售出">
-    </td>
-  </tr>
-  
-  </tbody>
-  </table>
-                    </div>
-                    <div id="bot">
-                        <p>下列表格是想購買您書籍的買家，按下"同意"後便會向他們顯示您的聯絡方式
-                       
-                        <hr size="2px" align="top" width="100%"></p>
-                        <table class="table table-bordered border-warning table-hover">
-  <thead>
-  <tr>
-	<th>買家</th>
-	<th>書名</th>
-	<th>是否像此買家透露您的聯絡方式?</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-	<td>陳姿提</td>
-	<td>喵咪吃罐頭</td>
-	<td>
-        <input type="button" value="Yes">
-        <input type="button" value="No">
-    </td>
-  </tr>
-  
-  </tbody>
-  </table>
-                    </div>
-                    </span>
-                        </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="mid">
+                                <h3>我是賣家<br>
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
+                                <p>上架欲賣出書籍請點此填寫表單</p>
+
+                                <table class="table table-bordered border-warning table-hover">
+                                    <thead>
+
+                                        <tr>
+                                            <th>已上架書籍</th>
+                                            <th align="right">書籍狀態</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>喵咪吃罐頭</td>
+                                            <td>
+                                                <input type="button" value="下架此書">
+                                                <input type="button" value="已售出">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="bot">
+                                <p>下列表格是想購買您書籍的買家，按下"同意"後便會向他們顯示您的聯絡方式
+
+                                    <hr size="2px" align="top" width="100%">
+                                </p>
+                                <table class="table table-bordered border-warning table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>買家</th>
+                                            <th>書名</th>
+                                            <th>是否像此買家透露您的聯絡方式?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>陳姿提</td>
+                                            <td>喵咪吃罐頭</td>
+                                            <td>
+                                                <input type="button" value="Yes">
+                                                <input type="button" value="No">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </span>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Blog Section End -->
@@ -302,9 +318,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>

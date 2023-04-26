@@ -23,14 +23,27 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #login{
-        position: absolute; width: auto; height: auto; top: auto; right: 0; bottom: 10%; left: auto;
+    #login {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: 0;
+        bottom: 10%;
+        left: auto;
     }
-    #menu{
-        position: relative; width: auto; height: auto; top: auto; right: auto; bottom: auto; left: 5%;
+
+    #menu {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 5%;
     }
-    
 </style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -117,7 +130,7 @@
                             <span>依學院搜尋</span>
                         </div>
                         <ul>
-                        <li><a href="#">文學院</a></li>
+                            <li><a href="#">文學院</a></li>
                             <li><a href="#">藝術學院</a></li>
                             <li><a href="#">傳播學院</a></li>
                             <li><a href="#">教育學院</a></li>
@@ -137,53 +150,55 @@
                 <div class="col-lg-9">
                     <div style="background-color:#F5F5F5">
                         <div class="hero__text">
-                            <span><font size="6"> 常見問題<i class="fa fa-comment-o	"></i></font></span>
+                            <span>
+                                <font size="6"> 常見問題<i class="fa fa-comment-o	"></i></font>
+                            </span>
                             <p>Question and Answer</p>
 
-                                <div style="width:95%;
+                            <div style="width:95%;
                                     height:100px;  
                                     background-color:#FCFCFC;
                                     border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
 
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
                                         font-size:23px; font-weight:bold;">如何買書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                <p style="margin-left: 10px; margin-bottom: 10px; 
                                         font-size:18px; font-weight:light;">在"瀏覽二手書"中找到你想要的書並按下確認購買，
-                                        然後等待賣家同意給你他的連絡資訊後，便可以去會員專區查看賣家的聯絡方式並連繫賣家商討
-                                        事後購書事宜細節。</p>
-                                </div>
-                            
-                                <div style="width:95%;
+                                    然後等待賣家同意給你他的連絡資訊後，便可以去會員專區查看賣家的聯絡方式並連繫賣家商討
+                                    事後購書事宜細節。</p>
+                            </div>
+
+                            <div style="width:95%;
                                     height:100px;  
                                     background-color:#FCFCFC;
                                     border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
 
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
                                         font-size:23px; font-weight:bold;">如何賣書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                <p style="margin-left: 10px; margin-bottom: 10px; 
                                         font-size:18px; font-weight:light;">在"首頁"可以看到"我要賣書，點此連結填寫上架表單"
-                                        ，點進去後依照指示填完表格並按"送出表單"即可成功上架書籍。這邊提醒您，上船二手書時請上
-                                        傳清晰的照片，切勿用網路圖片，並詳述書本的實際狀況。</p>
+                                    ，點進去後依照指示填完表格並按"送出表單"即可成功上架書籍。這邊提醒您，上船二手書時請上
+                                    傳清晰的照片，切勿用網路圖片，並詳述書本的實際狀況。</p>
 
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                <p style="margin-left: 10px; margin-bottom: 10px; 
                                         font-size:18px; font-weight:light;">若有買家想購買您的書籍，您必須在"會員專區"按下"同意"向此買家透漏您的個人聯絡方式，買家
-                                        才能聯絡您並商討事後購書細節。
-                                        </p>
-                                </div>
-                                <div style="width:95%;
+                                    才能聯絡您並商討事後購書細節。
+                                </p>
+                            </div>
+                            <div style="width:95%;
                                     height:100px;  
                                     background-color:#FCFCFC;
                                     border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
 
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
                                         font-size:23px; font-weight:bold;">如果買家(或賣家)搞失蹤或放鳥我怎麼辦？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                <p style="margin-left: 10px; margin-bottom: 10px; 
                                         font-size:18px; font-weight:light;">遇到這種情況麻煩幫我到"提問專區"填寫表單，詳細敘述發生經過，後續我們將會審核並給予不良的
-                                        買家或賣家貼上警告標籤，警告下一位與此使用者交易的人。
-                                        
-                                        </p>
-                                </div>
-                                
+                                    買家或賣家貼上警告標籤，警告下一位與此使用者交易的人。
+
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -250,9 +265,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>
