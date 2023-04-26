@@ -220,50 +220,53 @@
                     </div>
                     <div class="reservation-form">
     <div class="container">
-      <div class="row">
-        <div style="background-color:#F5F5F5;">
+        <div class="row">
+            <div class="col-lg-11" style="margin-bottom: 10px;">
 
-            <div class="row">
-              <div class="col-lg-12" style="margin-bottom: 20px; margin-left: 37%; margin-top: 10%;">
-                <span><font size="6"><b>會員註冊</b></font></span>
-              </div>
-              <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
-                  <fieldset>
-                      <label for="Name" class="form-label"><font size="4">帳號</font></label>
-                      <input type="text" name="Number" class="Number" autocomplete="on" placeholder="請輸入學號"required>
-                  </fieldset>
-              </div>
-              <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
-                <fieldset>
-                    <label for="Number" class="form-label"><font size="3">密碼</font></label>
-                    <input type="Password" name="Password" class="Password" autocomplete="on" placeholder="請輸入密碼" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
-                <fieldset>
-                    <label for="Nickname" class="form-label"><font size="3">暱稱</font></label>
-                    <input type="text" name="Nickname" class="Nickname" autocomplete="on" placeholder="請輸入暱稱" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6" style="margin-bottom: 30px; margin-left:33%; ">
-                <fieldset>
-                    <label for="Contact" class="form-label"><font size="3">聯絡方式:</font></label><br>
-                    <input type="checkbox" value="IG" name="Contact">Instagram<input type="text" placeholder="請輸入IG帳號"><br>
-                    <input type="checkbox" value="Phone" name="Contact">手機號碼<input type="text" placeholder="請輸入09xx-xxx-xxx"><br>
-                    <input type="checkbox" value="FB" name="Contact">Facebook<input type="text" placeholder="請輸入FB帳號"><br>
+                <div style="background-color:#F5F5F5;">
 
-                </fieldset>
-              </div>
-              
+                    <div class="row">
+                    <div class="col-lg-12" style="margin-bottom: 20px; margin-left: 37%; margin-top: 5%;">
+                        <span><font size="6"><b>會員註冊</b></font></span>
+                    </div>
+                    <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
+                        <fieldset>
+                            <label for="Name" class="form-label"><font size="4">帳號</font></label>
+                            <input type="text" name="Number" class="Number" autocomplete="on" placeholder="請輸入學號"required>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
+                        <fieldset>
+                            <label for="Number" class="form-label"><font size="3">密碼</font></label>
+                            <input type="Password" name="Password" class="Password" autocomplete="on" placeholder="請輸入密碼" required>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
+                        <fieldset>
+                            <label for="Nickname" class="form-label"><font size="3">暱稱</font></label>
+                            <input type="text" name="Nickname" class="Nickname" autocomplete="on" placeholder="請輸入暱稱" required>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
+                        <fieldset>
+                            <label for="Contact" class="form-label"><font size="3">聯絡方式:</font></label><br>
+                            <input type="checkbox" value="IG" name="Contact">Instagram<input type="text" placeholder="請輸入IG帳號"><br>
+                            <input type="checkbox" value="Phone" name="Contact">手機號碼<input type="text" placeholder="請輸入09xx-xxx-xxx"><br>
+                            <input type="checkbox" value="FB" name="Contact">Facebook<input type="text" placeholder="請輸入FB帳號"><br>
 
-              
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: 10px; margin-left:42%; ">                        
+                        <fieldset>
+                            <button class="main-button">登  入</button>
+                        </fieldset>
+                    </div>
               </div>
+                
+                
+            </div>
               
-              <div class="col-lg-12" style="margin-bottom: 10px; margin-left:42%; ">                        
-                  <fieldset>
-                      <button class="main-button">登  入</button>
-                  </fieldset>
-              </div>
+              
             </div>
           </form>
         </div>
