@@ -220,7 +220,8 @@
                             <span>Welcome to second hand bookstore for FJU</span>
                             <h2>輔仁2手書平台</h2>
                             <p>這個平台歡迎每個人上架、購買二手書，<br />我們將會給您最簡單以及簡潔的頁面，<br>但卻擁有最好的二手書交易經驗。</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <a href="#" class="primary-btn"><font size="4">我要買書</font></a>
+                            <a href="#" class="primary-btn"><font size="4">我要賣書</font></a>
                         </div>
                     </div>
                 </div>
