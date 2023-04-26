@@ -117,17 +117,20 @@
                             <span>依學院搜尋</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">文學院</a></li>
+                            <li><a href="#">藝術學院</a></li>
+                            <li><a href="#">傳播學院</a></li>
+                            <li><a href="#">教育學院</a></li>
+                            <li><a href="#">醫學院</a></li>
+                            <li><a href="#">理工學院</a></li>
+                            <li><a href="#">外國語文學院</a></li>
+                            <li><a href="#">民生學院</a></li>
+                            <li><a href="#">法律學院</a></li>
+                            <li><a href="#">社會科學院</a></li>
+                            <li><a href="#">管理學院</a></li>
+                            <li><a href="#">織品服裝學院</a></li>
+                            <li><a href="#">通識課程</a></li>
+                            <li><a href="#">其他</a></li>
                         </ul>
                     </div>
                 </div>
