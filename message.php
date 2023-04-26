@@ -14,7 +14,7 @@
   <table width=400 align=center border=1 bordercolor=#C6D7E7 cellspacing=0 cellpadding=0>
     <tr>
       <td bgcolor=#C6D7E7>
-        學生資訊網
+        輔大2手書交易平台
       </td>
     </tr>
     <tr>
@@ -32,7 +32,7 @@
     </tr>
     <tr>
       <td align=right bgcolor=#C6D7E7>
-        | <a href="main.php">回查詢</a> |
+        | <a href="index.php">回首頁</a> |
       </td>
     </tr>
   </table>

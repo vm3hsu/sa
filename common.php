@@ -49,7 +49,6 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
@@ -58,10 +57,10 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="index.php">首頁</a></li>
+                <li><a href="index.php">首頁</a></li>
                 <li><a href="shop.php">瀏覽二手書</a></li>
                 <li><a href="request.php">索書專區</a></li>
-                <li><a href="common.php">常見問題</a></li>
+                <li class="active"><a href="common.php">常見問題</a></li>
                 <li><a href="QA.php">提問專區</a></li>
                 <li><a href="member.php">會員專區</a></li>
             </ul>
@@ -69,7 +68,6 @@
         <div id="mobile-menu-wrap"></div>
     </div>
     <!-- Humberger End -->
-
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -82,10 +80,18 @@
                 <div class="col-lg-7">
                     <div class="header__cart">
                         <table id="login">
-                            <tr>
-                                <td>[<a href=#>登入</a>]</td>
-                                <td>[<a href=#>註冊</a>]</td>
-                            </tr>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
+                                }
+                                else
+                                {
+                                    echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
+                                }
+                            ?>
+                            
                         </table>
                     </div>
                 </div>
@@ -105,10 +111,10 @@
                 <div class="col-lg-9">
                     <nav class="header__menu" id="menu">
                         <ul>
-                            <li class="active"><a href="index.php">首頁</a></li>
+                            <li><a href="index.php">首頁</a></li>
                             <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
-                            <li><a href="common.php">常見問題</a></li>
+                            <li class="active"><a href="common.php">常見問題</a></li>
                             <li><a href="QA.php">提問專區</a></li>
                             <li><a href="member.php">會員專區</a></li>
                         </ul>
@@ -119,34 +125,12 @@
     </header>
     <!-- Header Section End -->
 
+
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>依學院搜尋</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">文學院</a></li>
-                            <li><a href="#">藝術學院</a></li>
-                            <li><a href="#">傳播學院</a></li>
-                            <li><a href="#">教育學院</a></li>
-                            <li><a href="#">醫學院</a></li>
-                            <li><a href="#">理工學院</a></li>
-                            <li><a href="#">外國語文學院</a></li>
-                            <li><a href="#">民生學院</a></li>
-                            <li><a href="#">法律學院</a></li>
-                            <li><a href="#">社會科學院</a></li>
-                            <li><a href="#">管理學院</a></li>
-                            <li><a href="#">織品服裝學院</a></li>
-                            <li><a href="#">通識課程</a></li>
-                            <li><a href="#">其他</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <?php include "sidebar.php";?>
                 <div class="col-lg-9">
                     <div style="background-color:#F5F5F5">
                         <div class="hero__text">
