@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>Ogani | Template b</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -31,6 +31,24 @@
     }
     
 </style>
+<style type="text/css">
+    #nav {
+        position: relative; width: 20%; height: auto; top: 0; right: auto; bottom: auto; left: 0; color:black
+    }
+
+    #top{
+        position: relative; width: auto; height: 30%; top: 0; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+
+    #mid{
+        position: relative; width: auto; height: 30%; top: 13%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+
+    #bot{
+        position: relative; width: auto; height: auto; top: 26%; right: 0; bottom: auto; left: 5%; color:rgb(11, 0, 0)
+    }
+</style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -112,7 +130,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero__categories">
-                    <div class="hero__categories__all">
+                        <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
                             <span>依學院搜尋</span>
                         </div>
@@ -134,64 +152,63 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div style="background-color:#F5F5F5">
-                        <div class="hero__text">
-                            <span><font size="6"> 常見問題<i class="fa fa-comment-o	"></i></font></span>
-                            <p>Question and Answer</p>
-
-                                <div style="width:95%;
-                                    height:100px;  
-                                    background-color:#FCFCFC;
-                                    border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
-
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                        font-size:23px; font-weight:bold;">如何買書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                        font-size:18px; font-weight:light;">在"瀏覽二手書"中找到你想要的書並按下確認購買，
-                                        然後等待賣家同意給你他的連絡資訊後，便可以去會員專區查看賣家的聯絡方式並連繫賣家商討
-                                        事後購書事宜細節。</p>
-                                </div>
-                            
-                                <div style="width:95%;
-                                    height:100px;  
-                                    background-color:#FCFCFC;
-                                    border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
-
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                        font-size:23px; font-weight:bold;">如何賣書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                        font-size:18px; font-weight:light;">在"首頁"可以看到"我要賣書，點此連結填寫上架表單"
-                                        ，點進去後依照指示填完表格並按"送出表單"即可成功上架書籍。這邊提醒您，上船二手書時請上
-                                        傳清晰的照片，切勿用網路圖片，並詳述書本的實際狀況。</p>
-
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                        font-size:18px; font-weight:light;">若有買家想購買您的書籍，您必須在"會員專區"按下"同意"向此買家透漏您的個人聯絡方式，買家
-                                        才能聯絡您並商討事後購書細節。
-                                        </p>
-                                </div>
-                                <div style="width:95%;
-                                    height:100px;  
-                                    background-color:#FCFCFC;
-                                    border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
-
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                        font-size:23px; font-weight:bold;">如果買家(或賣家)搞失蹤或放鳥我怎麼辦？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                        font-size:18px; font-weight:light;">遇到這種情況麻煩幫我到"提問專區"填寫表單，詳細敘述發生經過，後續我們將會審核並給予不良的
-                                        買家或賣家貼上警告標籤，警告下一位與此使用者交易的人。
-                                        
-                                        </p>
-                                </div>
-                                
+                <div class="col-lg-8 col-md-7">
+                    <div class="row">
+                    <span style="font-family:DFKai-sb;">
+                    <div id="top">
+                        <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象貼上壞寶寶貼紙
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <form>
+                            投訴對象名稱：<input type="text" name="UserName">
+                            <br><br>
+                            投訴對象身分：
+                            <input type="radio" name="UserType" walue="Type1">買家
+                            <input type="radio" name="UserType" walue="Type1">賣家
+                            <br><br>
+                            投訴原因(請詳細說明):<br><textarea name="comments" rows="5" cols="60"></textarea>
+                            <input type="submit" value="送出資料">
+                            <br>
+                        </form>
+                    </div>
+                    <div id="mid">
+                        <h3>回饋專區___請告訴我們的工程師你對於此網站的改善與建議
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <form>
+                            歡迎你們提供對於這個平台更好的改善方式：<br><br><textarea name="comments" rows="8" cols="60"></textarea>
+                             <input type="submit" value="送出資料">
+                        </form>
+                    </div>
+                    <div id="bot">
+                        <h3>有想買的書卻尚未有人賣？
+                        <br>
+                        填寫以下表格->自動刊登在"索書專區"->讓賣家們看到你的需求並上架！
+                        <hr size="2px" align="top" width="100%"></h3>
+                            <form>
+                                書名(盡量完整)：<input type="text" name="BookName">
+                                <br><br>
+                                上傳書的照片(可放網路圖)：
+                                <input type="submit" value="Upload">
+                            </form>
+                    </div>
+                    </span>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    
         </div>
     </section>
     <!-- Hero Section End -->
 
+
+    <!-- Blog Section Begin -->
+    <section class="blog spad">
+        <div class="container">
+            <div class="row">
+                
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
