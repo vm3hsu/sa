@@ -296,7 +296,7 @@
                         <h3>我是買家
                         <hr size="2px" align="top" width="100%">
                         </h3>
-                        <table class="table table-bordered border-warning table-hover">
+                        <table class="table table-bordered border-warning ">
   <thead>
   <tr>
 	<th>你的購物車</th>
