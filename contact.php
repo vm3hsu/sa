@@ -221,106 +221,182 @@
     </section>
     <!-- Hero Section End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="blog spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Contact Us</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Contact Us</span>
+                <div class="col-lg-4 col-md-5">
+                    <div class="blog__sidebar">
+                        <div class="blog__sidebar__search">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button type="submit"><span class="icon_search"></span></button>
+                            </form>
+                        </div>
+                        <div class="blog__sidebar__item">
+                            <h4>Categories</h4>
+                            <ul>
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Beauty (20)</a></li>
+                                <li><a href="#">Food (5)</a></li>
+                                <li><a href="#">Life Style (9)</a></li>
+                                <li><a href="#">Travel (10)</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog__sidebar__item">
+                            <h4>Recent News</h4>
+                            <div class="blog__sidebar__recent">
+                                <a href="#" class="blog__sidebar__recent__item">
+                                    <div class="blog__sidebar__recent__item__pic">
+                                        <img src="img/blog/sidebar/sr-1.jpg" alt="">
+                                    </div>
+                                    <div class="blog__sidebar__recent__item__text">
+                                        <h6>09 Kinds Of Vegetables<br /> Protect The Liver</h6>
+                                        <span>MAR 05, 2019</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="blog__sidebar__recent__item">
+                                    <div class="blog__sidebar__recent__item__pic">
+                                        <img src="img/blog/sidebar/sr-2.jpg" alt="">
+                                    </div>
+                                    <div class="blog__sidebar__recent__item__text">
+                                        <h6>Tips You To Balance<br /> Nutrition Meal Day</h6>
+                                        <span>MAR 05, 2019</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="blog__sidebar__recent__item">
+                                    <div class="blog__sidebar__recent__item__pic">
+                                        <img src="img/blog/sidebar/sr-3.jpg" alt="">
+                                    </div>
+                                    <div class="blog__sidebar__recent__item__text">
+                                        <h6>4 Principles Help You Lose <br />Weight With Vegetables</h6>
+                                        <span>MAR 05, 2019</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="blog__sidebar__item">
+                            <h4>Search By</h4>
+                            <div class="blog__sidebar__item__tags">
+                                <a href="#">Apple</a>
+                                <a href="#">Beauty</a>
+                                <a href="#">Vegetables</a>
+                                <a href="#">Fruit</a>
+                                <a href="#">Healthy Food</a>
+                                <a href="#">Lifestyle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7">
+                    <div class="row">
+                    <span style="font-family:DFKai-sb;">
+                    <div id="top">
+                        <h3>--------
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <h3>我是買家
+                        <hr size="2px" align="top" width="100%">
+                        </h3>
+                        <table class="table table-bordered border-warning table-hover">
+  <thead>
+  <tr>
+	<th>你的購物車</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+	<td>    
+    <input type="checkbox" name="comic" value="a">&nbsp;2隻老虎____黃偉柔<br>
+      <input type="checkbox" name="comic" value="b">&nbsp;黃色的巧虎____陳俊宇<br>
+	  <input type="checkbox" name="comic" value="c">&nbsp;名偵探柯南<br>
+      <div align=right>
+      <input type="submit" value="從車裡刪除">
+      <input type="submit" value="確認購買">
+    </td>
+  </tr>
+  
+  </tbody>
+  </table>
+
+
+
+  <table class="table table-bordered border-warning table-hover">
+  <thead>
+  <tr>
+	<th>確認購買書籍的賣家聯絡方式</th>
+	<th>賣家是否接單</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+	<td>2隻老虎____黃偉柔,Line ID:09XXXXX985</td>
+	<td>否,您還不能聯絡賣家</td>
+  </tr>
+  <tr>
+	<td>黃色的巧虎____陳俊宇,IG:IAM_STUPID</td>
+	<td>是,您已可以聯絡賣家</td>
+  </tr>
+  
+  </tbody>
+  </table>
+                    </div>
+                    <div id="mid">
+                        <h3>我是賣家<br>
+                        <hr size="2px" align="top" width="100%"></h3>
+                        <p>上架欲賣出書籍請點此填寫表單</p>
+                        
+                        <table class="table table-bordered border-warning table-hover">
+  <thead>
+
+  <tr>
+	<th>已上架書籍</th>
+    <th align="right">書籍狀態</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>喵咪吃罐頭</td>
+    <td>  
+      <input type="button" value="下架此書">
+      <input type="button" value="已售出">
+    </td>
+  </tr>
+  
+  </tbody>
+  </table>
+                    </div>
+                    <div id="bot">
+                        <p>下列表格是想購買您書籍的買家，按下"同意"後便會向他們顯示您的聯絡方式
+                       
+                        <hr size="2px" align="top" width="100%"></p>
+                        <table class="table table-bordered border-warning table-hover">
+  <thead>
+  <tr>
+	<th>買家</th>
+	<th>書名</th>
+	<th>是否像此買家透露您的聯絡方式?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+	<td>陳姿提</td>
+	<td>喵咪吃罐頭</td>
+	<td>
+        <input type="button" value="Yes">
+        <input type="button" value="No">
+    </td>
+  </tr>
+  
+  </tbody>
+  </table>
+                    </div>
+                    </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_phone"></span>
-                        <h4>Phone</h4>
-                        <p>+01-3-8888-6868</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_pin_alt"></span>
-                        <h4>Address</h4>
-                        <p>60-49 Road 11378 New York</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_clock_alt"></span>
-                        <h4>Open time</h4>
-                        <p>10:00 am to 23:00 pm</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_mail_alt"></span>
-                        <h4>Email</h4>
-                        <p>hello@colorlib.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section End -->
-
-    <!-- Map Begin -->
-    <div class="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49116.39176087041!2d-86.41867791216099!3d39.69977417971648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886ca48c841038a1%3A0x70cfba96bf847f0!2sPlainfield%2C%20IN%2C%20USA!5e0!3m2!1sen!2sbd!4v1586106673811!5m2!1sen!2sbd"
-            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        <div class="map-inside">
-            <i class="icon_pin"></i>
-            <div class="inside-widget">
-                <h4>New York</h4>
-                <ul>
-                    <li>Phone: +12-345-6789</li>
-                    <li>Add: 16 Creek Ave. Farmingdale, NY</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Map End -->
-
-    <!-- Contact Form Begin -->
-    <div class="contact-form spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact__form__title">
-                        <h2>Leave Message</h2>
-                    </div>
-                </div>
-            </div>
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your name">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your Email">
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <textarea placeholder="Your message"></textarea>
-                        <button type="submit" class="site-btn">SEND MESSAGE</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Contact Form End -->
+    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
