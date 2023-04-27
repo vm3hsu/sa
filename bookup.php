@@ -97,13 +97,12 @@
         margin-top: 2px;
         outline: 0 none;
         padding: 3px 3px 3px 5px;
-        width: 85%;
+        width: 90%;
         font-size: 12px;
         line-height: 15px;
         box-shadow: inset 0px 1px 4px #ECECEC;
         -moz-box-shadow: inset 0px 1px 4px #ECECEC;
         -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-        float: right;
     }
 
     .basic-grey textarea {
@@ -121,7 +120,6 @@
         width: 60%;
         height: 35px;
         line-height: 25px;
-        float: right;
     }
 
     .basic-grey textarea {
@@ -229,113 +227,123 @@
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
                     <form action="Bdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
-                    <input type=hidden name="dbaction" value="insert">
+                        <input type=hidden name="dbaction" value="insert">
                         <h1>賣家上架書籍表單</h1>
-                        <table>
-                            <tr>
-                                <td rowspan="4"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
-                                <td>
-                                    <span>書名：</span>
-                                    <input type="text" name="BName" placeholder="請輸入完整的書名" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>定價：</span>
-                                    <input type="text" name="price" placeholder="請輸入價格" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>類別：</span>
-                                    <select name="category">
-                                        <option value="宗教哲學">宗教哲學</option>
-                                        <option value="應用科學">應用科學</option>
-                                        <option value="社會科學">社會科學</option>
-                                        <option value="語言文學">語言文學</option>
-                                        <option value="藝術人文">藝術人文</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>書況：</span>
-                                    <table align="center">
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="new" value="0">全新</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="new" value="1">非全新</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="yellowing" value="0">無自然泛黃</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="yellowing" value="1">有自然泛黃</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="dirty" value="0">無髒污</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="dirty" value="1">有髒污</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="wrinkle" value="0">無皺褶</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="wrinkle" value="1">有皺褶</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="lack" value="0">無缺頁</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="lack" value="1">有缺頁</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label><input type="radio" name="note" value="0">無筆記</label>
-                                            </td>
-                                            <td>
-                                                <label><input type="radio" name="note" value="1">有筆記</label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
+                        <table width=100%>
+                            <tbody width=100%>
+                                <tr>
+                                    <td width=50% rowspan="4"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
+                                    <td width=5%>
+                                        <span>書名：</span>
+                                    </td>
+                                    <td width=45%>
+                                        <input type="text" name="BName" placeholder="請輸入完整的書名" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>定價：</span>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="price" placeholder="請輸入價格" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>類別：</span>
+                                    </td>
+                                    <td>
+                                        <select name="category" style="float: right;">
+                                            <option value="宗教哲學">宗教哲學</option>
+                                            <option value="應用科學">應用科學</option>
+                                            <option value="社會科學">社會科學</option>
+                                            <option value="語言文學">語言文學</option>
+                                            <option value="藝術人文">藝術人文</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>書況：</span>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="new" value="0">全新</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="new" value="1">非全新</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="yellowing" value="0">無自然泛黃</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="yellowing" value="1">有自然泛黃</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="dirty" value="0">無髒污</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="dirty" value="1">有髒污</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="wrinkle" value="0">無皺褶</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="wrinkle" value="1">有皺褶</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="lack" value="0">無缺頁</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="lack" value="1">有缺頁</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="note" value="0">無筆記</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="note" value="1">有筆記</label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>※請上傳實體書的真實照片，請勿上傳網路上的照片</label>
-                                </td>
-                                <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>※請上傳實體書的真實照片，請勿上傳網路上的照片</label>
+                                    </td>
+                                    <td></td>
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>※請上傳清晰的照片，建議三張以上，含封面、背面、內頁</label>
-                                </td>
-                                <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>※請上傳清晰的照片，建議三張以上，含封面、背面、內頁</label>
+                                    </td>
+                                    <td></td>
 
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <label>
-                                        <span>&nbsp;</span>
-                                        <input type="submit" class="button" value="Send" />
-                                    </label>
-                                </td>
-                            </tr>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <label>
+                                            <span>&nbsp;</span>
+                                            <input type="submit" class="button" value="Send" />
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </form>
                 </div>
