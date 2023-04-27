@@ -131,7 +131,8 @@
                             在平台上找不到想要買的書?</b>
                         </div>
                     </div>
-                    <button style="margin-bottom: 20px; margin-left:38%;">點此上傳你想買的書!</button>
+                    <button style="margin-bottom: 20px; margin-left:38%; border: white solid;">
+                    <a href="requestbook.php" class="primary-btn">點此上傳你想買的書!</a></button>
                     <hr style="border: 2px solid gray;"/>
                     <div class="row">
                         <div style="width:95%;
