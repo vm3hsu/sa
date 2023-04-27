@@ -177,7 +177,7 @@
                                             <td>否,您還不能聯絡賣家</td>
                                         </tr>
                                         <tr>
-                                            <td>黃色的巧虎____陳俊宇,IG:IAM_STUPID</td>
+                                            <td>黃色的巧虎____陳俊宇,IG:IAM_SMART</td>
                                             <td>是,您已可以聯絡賣家</td>
                                         </tr>
 
