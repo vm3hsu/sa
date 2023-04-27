@@ -97,12 +97,13 @@
         margin-top: 2px;
         outline: 0 none;
         padding: 3px 3px 3px 5px;
-        width: 250px;
+        width: 85%;
         font-size: 12px;
         line-height: 15px;
         box-shadow: inset 0px 1px 4px #ECECEC;
         -moz-box-shadow: inset 0px 1px 4px #ECECEC;
         -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+        float: right;
     }
 
     .basic-grey textarea {
@@ -117,9 +118,10 @@
         -moz-appearance: none;
         text-indent: 0.01px;
         text-overflow: '';
-        width: 70%;
+        width: 60%;
         height: 35px;
         line-height: 25px;
+        float: right;
     }
 
     .basic-grey textarea {
@@ -226,11 +228,12 @@
             <div class="row">
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
-                    <form action="" method="post" class="basic-grey" enctype="https://github.com/vm3hsu/sa/tree/master/books">
+                    <form action="Bdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
+                    <input type=hidden name="dbaction" value="insert">
                         <h1>賣家上架書籍表單</h1>
                         <table>
                             <tr>
-                                <td rowspan="3"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
+                                <td rowspan="4"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
                                 <td>
                                     <span>書名：</span>
                                     <input type="text" name="BName" placeholder="請輸入完整的書名" />
@@ -240,6 +243,18 @@
                                 <td>
                                     <span>定價：</span>
                                     <input type="text" name="price" placeholder="請輸入價格" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>類別：</span>
+                                    <select name="category">
+                                        <option value="宗教哲學">宗教哲學</option>
+                                        <option value="應用科學">應用科學</option>
+                                        <option value="社會科學">社會科學</option>
+                                        <option value="語言文學">語言文學</option>
+                                        <option value="藝術人文">藝術人文</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>

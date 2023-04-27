@@ -1,6 +1,5 @@
   <?php
   $dbaction = $_POST['dbaction'];
-
   $account = $_POST['account'];
   $password = $_POST['password'];
   $name = $_POST['name'];
