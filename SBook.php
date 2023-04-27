@@ -114,7 +114,7 @@
                     </form>
 
                     
-                </div>
+               </div>
                 <div class="col-lg-9">
                     <nav class="header__menu" id="menu">
                         <ul>
@@ -142,9 +142,9 @@
                     <div class="row">
                     
     <table class="table table-bordered border-dark table-hover">
-    <thead>
-    <tr class="table-active">
-    <th colspan=4>內容</th>
+    <thead style="background-color:#7fad39">
+    <tr>
+    <th colspan=4><font color="#ffffff">內容</th>
     </tr>
     </thead>
     <tbody>

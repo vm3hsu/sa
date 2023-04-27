@@ -135,16 +135,27 @@
                     <div class="row">
                         <span style="font-family:DFKai-sb;">
                             <div id="top">
-                                <h3>--------
+                                <h3>
+                                <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<tr><td>請先<a href='SAlogin.php'>登入</a></td><td>或<a href='register.php'>註冊</a></td></tr>";
+                                }
+                                else
+                                {
+                                    echo"<tr><td>你好，".$_SESSION['name']." !</td></tr>";
+                                }
+                                ?>
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
                                 <h3>我是買家
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
-                                <table class="table table-bordered border-warning ">
-                                    <thead>
+                                <table class="table table-bordered border-warning">
+                                    <thead style="background-color:#7fad39">
                                         <tr>
-                                            <th>你的購物車</th>
+                                            <th><font color="#ffffff">你的購物車</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -165,10 +176,10 @@
 
 
                                 <table class="table table-bordered border-warning table-hover">
-                                    <thead>
+                                    <thead style="background-color:#7fad39">
                                         <tr>
-                                            <th>確認購買書籍的賣家聯絡方式</th>
-                                            <th>賣家是否接單</th>
+                                            <th><font color="#ffffff">確認購買書籍的賣家聯絡方式</th>
+                                            <th><font color="#ffffff">賣家是否接單</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -191,11 +202,11 @@
                                 <p>上架欲賣出書籍請點此填寫表單</p>
 
                                 <table class="table table-bordered border-warning table-hover">
-                                    <thead>
+                                    <thead style="background-color:#7fad39">
 
                                         <tr>
-                                            <th>已上架書籍</th>
-                                            <th align="right">書籍狀態</th>
+                                            <th><font color="#ffffff">已上架書籍</th>
+                                            <th align="right"><font color="#ffffff">書籍狀態</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -216,11 +227,11 @@
                                     <hr size="2px" align="top" width="100%">
                                 </p>
                                 <table class="table table-bordered border-warning table-hover">
-                                    <thead>
+                                    <thead style="background-color:#7fad39">
                                         <tr>
-                                            <th>買家</th>
-                                            <th>書名</th>
-                                            <th>是否像此買家透露您的聯絡方式?</th>
+                                            <th><font color="#ffffff">買家</th>
+                                            <th><font color="#ffffff">書名</th>
+                                            <th><font color="#ffffff">是否像此買家透露您的聯絡方式?</th>
                                         </tr>
                                     </thead>
                                     <tbody>
