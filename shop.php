@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="header__logo">
-                        <a href="index.php"><img src="img/logo1.png"></a>
+                        <a href="index.php"><img src="img/logo.png"></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -148,24 +148,18 @@
                             $sql = "select * from book limit 9";
                         }
                         
-
-                        if (empty($searchtxt)) {
-                            
-                        } else {
-                            $sql = "select * from book where BName like'%$searchtxt%'";
-                        }
                         $result = mysqli_query($link, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo
+                            echo 
                             "<div class='col-lg-4 col-md-4 col-sm-4'>
                                 <div class='blog__item'>
                                     <div class='blog__item__pic'>
                                         <img src='img/blog/blog-2.jpg' alt=''>
                                     </div>
                                     <div class='blog__item__text' align='center'>
-                                        <h5><a href='#'>".$row['BName']."</a></h5>
+                                        <h5><a href='bookcontent.php?BNumber=".$row['BNumber']."'>".$row['BName']."</a></h5>
                                         <p>售價".$row['price']."元</p>
-                                        <a href='#' class='blog__btn'>READ MORE <span class='arrow_right'></span></a>
+                                        <a href='bookcontent.php?BNumber=".$row['BNumber']."' class='blog__btn'>READ MORE <span class='arrow_right'></span></a>
                                     </div>
                                 </div>
                             </div>";

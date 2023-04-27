@@ -101,7 +101,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="header__logo">
-                        <a href="index.php"><img src="img/logo1.png"></a>
+                        <a href="index.php"><img src="img/logo.png"></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
