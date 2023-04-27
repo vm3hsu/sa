@@ -140,7 +140,7 @@
                             <a href="#" class="primary-btn">
                                 <font size="4">我要買書</font>
                             </a>
-                            <a href="#" class="primary-btn">
+                            <a href="bookup.php" class="primary-btn">
                                 <font size="4">我要賣書</font>
                             </a>
                         </div>
