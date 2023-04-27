@@ -133,11 +133,24 @@
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
                         <?php
-                        $searchtxt = $_POST['searchtxt'];
+
                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
 
-                        if (empty($searchtxt)) {
+                        if($_POST['searchtxt']<>""){
+                            $searchtxt = $_POST['searchtxt'];
+                            $sql = "select * from book where BName like'%$searchtxt%'";
+                        }
+                        else if($_GET['searchtxt']<>""){
+                            $searchtxt = $_GET['searchtxt'];
+                            $sql = "select * from book where college like'%$searchtxt%'";
+                        }
+                        else{
                             $sql = "select * from book limit 9";
+                        }
+                        
+
+                        if (empty($searchtxt)) {
+                            
                         } else {
                             $sql = "select * from book where BName like'%$searchtxt%'";
                         }
