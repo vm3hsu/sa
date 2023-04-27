@@ -17,7 +17,7 @@
             <li><a href="#">社會科學院</a></li>
             <li><a href="#">管理學院</a></li>
             <li><a href="#">織品服裝學院</a></li>
-            <li><a href="#">通識課程</a></li>
+            <li><a href="#">全人通識課程</a></li>
             <li><a href="#">其他</a></li>
         </ul>
     </div>

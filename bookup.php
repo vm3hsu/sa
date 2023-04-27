@@ -44,102 +44,7 @@
     }
 
 
-    .basic-grey {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 700px;
-        background: #F7F7F7;
-        padding: 25px 15px 25px 10px;
-        font: 12px Georgia, "Times New Roman", Times, serif;
-        color: #888;
-        text-shadow: 1px 1px 1px #FFF;
-        border: 1px solid #E4E4E4;
-    }
-
-    .basic-grey h1 {
-        font-size: 25px;
-        padding: 0px 0px 10px 40px;
-        display: block;
-        border-bottom: 1px solid #E4E4E4;
-        margin: -10px -15px 30px -10px;
-        ;
-        color: #888;
-    }
-
-    .basic-grey h1>span {
-        display: block;
-        font-size: 11px;
-    }
-
-    .basic-grey label {
-        display: block;
-        margin: 0px;
-    }
-
-    .basic-grey label>span {
-        float: left;
-        width: 30%;
-        text-align: right;
-        padding-right: 10px;
-        margin-top: 10px;
-        color: #888;
-    }
-
-    .basic-grey input[type="text"],
-    .basic-grey input[type="email"],
-    .basic-grey textarea,
-    .basic-grey select {
-        border: 1px solid #DADADA;
-        color: #888;
-        height: 30px;
-        margin-bottom: 16px;
-        margin-right: 6px;
-        margin-top: 2px;
-        outline: 0 none;
-        padding: 3px 3px 3px 5px;
-        width: 90%;
-        font-size: 12px;
-        line-height: 15px;
-        box-shadow: inset 0px 1px 4px #ECECEC;
-        -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-        -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-    }
-
-    .basic-grey textarea {
-        padding: 5px 3px 3px 5px;
-    }
-
-    .basic-grey select {
-        background: #FFF url('down-arrow.png') no-repeat right;
-        background: #FFF url('down-arrow.png') no-repeat right;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 0.01px;
-        text-overflow: '';
-        width: 60%;
-        height: 35px;
-        line-height: 25px;
-    }
-
-    .basic-grey textarea {
-        height: 100px;
-    }
-
-    .basic-grey .button {
-        background: #E27575;
-        border: none;
-        padding: 10px 25px 10px 25px;
-        color: #FFF;
-        box-shadow: 1px 1px 5px #B6B6B6;
-        border-radius: 3px;
-        text-shadow: 1px 1px 1px #9E3F3F;
-        cursor: pointer;
-    }
-
-    .basic-grey .button:hover {
-        background: #CF7A7A
-    }
+    
 </style>
 
 <body>
@@ -179,13 +84,17 @@
                     <div class="header__cart">
                         <table id="login">
                             <?php
-                            session_start();
-                            if ($_SESSION['name'] == "") {
-                                echo "<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
-                            } else {
-                                echo "<tr><td>" . $_SESSION['name'] . "，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
-                            }
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
+                                }
+                                else
+                                {
+                                    echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
+                                }
                             ?>
+                            
                         </table>
                     </div>
                 </div>
@@ -197,8 +106,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <form action="#" style="border: 2px solid #4569ff;border-radius: 10px;overflow: hidden; position: relative; width: auto; height: auto; top: 30%; right: auto; bottom: auto; left: auto;">
-                        <input type="text" placeholder="搜尋書名" style="width: 80%">
+                    <form method="post" action="shop.php" style="border: 2px solid #4569ff;border-radius: 10px;overflow: hidden; position: relative; width: auto; height: auto; top: 30%; right: auto; bottom: auto; left: auto;">
+                        <input type="text" name="searchtxt" value="<?php echo $searchtxt; ?>" placeholder="搜尋書名" style="width: 80%">
                         <button type="submit" style="border: none;background-color: #ffffff;color: #fff;width: 15%"><img src="img/search.png" style="width:85%;height:85%"></button>
                     </form>
                 </div>
@@ -232,7 +141,7 @@
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
-                                    <td width=50% rowspan="4"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
+                                    <td width=50% rowspan="5"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
                                     <td width=5%>
                                         <span>書名：</span>
                                     </td>
@@ -253,12 +162,35 @@
                                         <span>類別：</span>
                                     </td>
                                     <td>
-                                        <select name="category" style="float: right;">
+                                        <select name="category">
                                             <option value="宗教哲學">宗教哲學</option>
                                             <option value="應用科學">應用科學</option>
                                             <option value="社會科學">社會科學</option>
                                             <option value="語言文學">語言文學</option>
                                             <option value="藝術人文">藝術人文</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>學院：</span>
+                                    </td>
+                                    <td>
+                                        <select name="college">
+                                            <option value="文學院">文學院</option>
+                                            <option value="藝術學院">藝術學院</option>
+                                            <option value="傳播學院">傳播學院</option>
+                                            <option value="教育學院">教育學院</option>
+                                            <option value="醫學院">醫學院</option>
+                                            <option value="理工學院">理工學院</option>
+                                            <option value="外國語文學院">外國語文學院</option>
+                                            <option value="民生學院">民生學院</option>
+                                            <option value="法律學院">法律學院</option>
+                                            <option value="社會科學院">社會科學院</option>
+                                            <option value="管理學院">管理學院</option>
+                                            <option value="織品服裝學院">織品服裝學院</option>
+                                            <option value="全人通識課程">全人通識課程</option>
+                                            <option value="其他">其他</option>
                                         </select>
                                     </td>
                                 </tr>

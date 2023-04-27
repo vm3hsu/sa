@@ -83,17 +83,14 @@
                     <div class="header__cart">
                         <table id="login">
                             <?php
-                                session_start();
-                                if($_SESSION['name']=="")
-                                {
-                                    echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
-                                }
-                                else
-                                {
-                                    echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
-                                }
+                            session_start();
+                            if ($_SESSION['name'] == "") {
+                                echo "<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
+                            } else {
+                                echo "<tr><td>" . $_SESSION['name'] . "，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
+                            }
                             ?>
-                            
+
                         </table>
                     </div>
                 </div>
@@ -105,8 +102,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <form action="#" style="border: 2px solid #4569ff;border-radius: 10px;overflow: hidden; position: relative; width: auto; height: auto; top: 30%; right: auto; bottom: auto; left: auto;">
-                        <input type="text" placeholder="搜尋書名" style="width: 80%">
+                    <form method="post" action="shop.php" style="border: 2px solid #4569ff;border-radius: 10px;overflow: hidden; position: relative; width: auto; height: auto; top: 30%; right: auto; bottom: auto; left: auto;">
+                        <input type="text" name="searchtxt" value="<?php echo $searchtxt; ?>" placeholder="搜尋書名" style="width: 80%">
                         <button type="submit" style="border: none;background-color: #ffffff;color: #fff;width: 15%"><img src="img/search.png" style="width:85%;height:85%"></button>
                     </form>
                 </div>
@@ -132,118 +129,35 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-            <?php include "sidebar.php";?>
+                <?php include "sidebar.php"; ?>
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
+                        <?php
+                        $searchtxt = $_POST['searchtxt'];
+                        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+
+                        if (empty($searchtxt)) {
+                            $sql = "select * from book limit 9";
+                        } else {
+                            $sql = "select * from book where BName like'%$searchtxt%'";
+                        }
+                        $result = mysqli_query($link, $sql);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo
+                            "<div class='col-lg-4 col-md-4 col-sm-4'>
+                                <div class='blog__item'>
+                                    <div class='blog__item__pic'>
+                                        <img src='img/blog/blog-2.jpg' alt=''>
+                                    </div>
+                                    <div class='blog__item__text' align='center'>
+                                        <h5><a href='#'>".$row['BName']."</a></h5>
+                                        <p>售價".$row['price']."元</p>
+                                        <a href='#' class='blog__btn'>READ MORE <span class='arrow_right'></span></a>
+                                    </div>
                                 </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <p>售價450元</p>
-                                    <a href="#" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
+                            </div>";
+                        }
+                        ?>
                         <div class="col-lg-12">
                             <div class="product__pagination blog__pagination" align="center">
                                 <a href="#">1</a>
