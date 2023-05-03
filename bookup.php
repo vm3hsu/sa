@@ -135,7 +135,7 @@
             <div class="row">
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
-                    <form action="Bdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
+                    <form action="Bdblink.php" method="post" enctype="multipart/form-data">
                         <input type=hidden name="dbaction" value="insert">
                         <h1>賣家上架書籍表單</h1>
                         <table width=100%>
@@ -202,50 +202,50 @@
                                         <table>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="new" value="0">全新</label>
+                                                    <input type="radio" name="new" value="全新">全新
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" name="new" value="1">非全新</label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label><input type="radio" name="yellowing" value="0">無自然泛黃</label>
-                                                </td>
-                                                <td>
-                                                    <label><input type="radio" name="yellowing" value="1">有自然泛黃</label>
+                                                    <input type="radio" name="new" value="非全新">非全新
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="dirty" value="0">無髒污</label>
+                                                    <input type="radio" name="yellowing" value="無自然泛黃">無自然泛黃
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" name="dirty" value="1">有髒污</label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label><input type="radio" name="wrinkle" value="0">無皺褶</label>
-                                                </td>
-                                                <td>
-                                                    <label><input type="radio" name="wrinkle" value="1">有皺褶</label>
+                                                    <input type="radio" name="yellowing" value="有自然泛黃">有自然泛黃
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="lack" value="0">無缺頁</label>
+                                                    <input type="radio" name="dirty" value="無髒污">無髒污
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" name="lack" value="1">有缺頁</label>
+                                                    <input type="radio" name="dirty" value="有髒污">有髒污
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="note" value="0">無筆記</label>
+                                                    <label><input type="radio" name="wrinkle" value="無皺褶">無皺褶</label>
                                                 </td>
                                                 <td>
-                                                    <label><input type="radio" name="note" value="1">有筆記</label>
+                                                    <label><input type="radio" name="wrinkle" value="有皺褶">有皺褶</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="lack" value="無缺頁">無缺頁</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="lack" value="有缺頁">有缺頁</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label><input type="radio" name="note" value="無筆記">無筆記</label>
+                                                </td>
+                                                <td>
+                                                    <label><input type="radio" name="note" value="有筆記">有筆記</label>
                                                 </td>
                                             </tr>
                                         </table>
