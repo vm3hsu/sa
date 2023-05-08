@@ -162,7 +162,7 @@
                     <div class="row">
                         <span style="font-family:DFKai-sb;">
                             <div id="top">
-                                <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象貼上壞寶寶貼紙
+                                <h3>投訴專區___待您送出後我們會將會審核，並給予投訴對象標示Warning Sign
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
                                 <form>
@@ -177,26 +177,13 @@
                                     <br>
                                 </form>
                             </div>
-                            <div id="mid">
+                            <div id="bot">
                                 <h3>回饋專區___請告訴我們的工程師你對於此網站的改善與建議
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
                                 <form>
                                     歡迎你們提供對於這個平台更好的改善方式：<br><br><textarea name="comments" rows="8" cols="60"></textarea>
                                     <input type="submit" value="送出資料">
-                                </form>
-                            </div>
-                            <div id="bot">
-                                <h3>有想買的書卻尚未有人賣？
-                                    <br>
-                                    填寫以下表格->自動刊登在"索書專區"->讓賣家們看到你的需求並上架！
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                <form>
-                                    書名(盡量完整)：<input type="text" name="BookName">
-                                    <br><br>
-                                    上傳書的照片(可放網路圖)：
-                                    <input type="submit" value="Upload">
                                 </form>
                             </div>
                         </span>
