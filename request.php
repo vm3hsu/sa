@@ -164,7 +164,7 @@
                                     </div>
                                     <div class='blog__item__text' align='center'>
                                         <h5>".$row['RName']."</h5>
-                                        <a href='bookup.php' class='blog__btn'>我要上架 <span class='arrow_right'></span></a>
+                                        <a href='Rbookup.php?RNumber=".$row['RNumber']."' class='blog__btn'>我要上架 <span class='arrow_right'></span></a>
                                     </div>
                                 </div>
                             </div>";
