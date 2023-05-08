@@ -136,13 +136,13 @@
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
                         <div class="col-sm-12 col-xs-12 site_map" style="margin-bottom: 15px;">
-				            <span>
-					        <a class="linkStyle01" href="index.php">首頁</a>
-				            </span>
-				            <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="shop.php">買二手書</a></span>
-				            <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="index.php">管理學院</a></span>
+                <span>
+             <a class="linkStyle01" href="index.php">首頁</a>
+                </span>
+                <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="shop.php">買二手書</a></span>
+                <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="index.php">管理學院</a></span>
                             <hr size="2px" align="top" width="100%">
-			
+   
                         </div>
                         <div class="col-lg-5 col-md-5 col-sm-5">
                             <div class="blog__item">
@@ -153,19 +153,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="authorBrand">
-                            <h1 style="line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;">經濟學<span style="color:#755e5f; font-weight: normal;font-size:20px;"></span></h1>
-		                    <hr size="2px" align="top" width="100%">
-                            <p style="margin:10px 0 0 0;"><span>賣家：范茵茜</span></p>
-		                    <p style="margin:10px 0 0 0;"><span>LINE ID：<span>09757xxxxx</span></p>
-		                    <p style="margin:10px 0 0 0;"><span>售價：<span>450元</span></p>
-		                    <p style="margin:10px 0 0 0;"><span>書況補充說明：<span>自然泛黃、髒汙</span></p>
-
-                            <input type="submit" value="加入購物車">
-                            <input type="submit" value="確認購買">
-	                    </div>
+                        <?php
+                        $BNumber = $_GET['BNumber'];
+                        $link = mysqli_connect('localhost','root','12345678','sa');
+   
+                        $sql = "SELECT name ,BName ,price ,BCondition FROM book b, user u WHERE b.seller=u.account and BNumber=".$BNumber."";
+                    
+                        $result = mysqli_query($link,$sql);
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo"
                         
 
+                        
+                        
+                        <div class='authorBrand'>
+                            <h1 style='line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;'>經濟學<span style='color:#755e5f; font-weight: normal;font-size:20px;'></span></h1>
+                      <hr size='2px' align='top' width='100%'>
+                            <p style='margin:10px 0 0 0;'><span>賣家：".$row['name'].";</span></p>
+                      <p style='margin:10px 0 0 0;'><span>售價：".$row['price'].";</span></p>
+                      <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>
+
+                            <input type='submit' value='加入購物車'>
+                            <input type='submit' value='確認購買'>
+                     </div>";
+                        }
+                        ?>
                         <div class="col-lg-7 col-md-7 col-sm-7">
                             <div class="row">
                                 <div class="blog__item__pic">
@@ -212,70 +224,4 @@
                             <li><a href="#">Who We Are</a></li>
                             <li><a href="#">Our Services</a></li>
                             <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
-</html>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-sa/blog.php at test · vm3hsu/sa
+                            <li><a h
