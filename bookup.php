@@ -135,9 +135,10 @@
             <div class="row">
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
+                <div style="background-color:#FAFAFA">
                     <form action="Bdblink.php" method="post" enctype="multipart/form-data">
                         <input type=hidden name="dbaction" value="insert">
-                        <h1>賣家上架書籍表單</h1>
+                        <h1><font size="6">&emsp;賣家上架書籍表單</font></h1><br>
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
@@ -253,17 +254,17 @@
 
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <label>※請上傳實體書的真實照片，請勿上傳網路上的照片</label>
+                                    <td colspan="2">
+                                        <label><font color ="#689F38">&emsp;※請上傳實體書的真實照片，請勿上傳網路上的照片</font></label>
                                     </td>
-                                    <td></td>
+                                    
 
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <label>※請上傳清晰的照片，建議三張以上，含封面、背面、內頁</label>
+                                    <td colspan="2">
+                                        <label><font color ="#689F38">&emsp;※請上傳清晰的照片，建議三張以上，含封面、背面、內頁</font></label>
                                     </td>
-                                    <td></td>
+                                    
 
                                 </tr>
                                 <tr>
@@ -276,7 +277,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                    
+                        </table> 
                     </form>
                 </div>
             </div>
