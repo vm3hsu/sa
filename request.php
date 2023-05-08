@@ -146,113 +146,30 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
+                    <?php
 
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
+                        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
+                        $sql = "select * from request limit 9";
+                        
 
+                        $result = mysqli_query($link, $sql);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo 
+                            "<div class='col-lg-4 col-md-4 col-sm-4'>
+                                <div class='blog__item'>
+                                    <div class='blog__item__pic'>
+                                        <img src='img/blog/blog-2.jpg' alt=''>
+                                    </div>
+                                    <div class='blog__item__text' align='center'>
+                                        <h5>".$row['RName']."</h5>
+                                        <a href='bookup.php' class='blog__btn'>我要上架 <span class='arrow_right'></span></a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-3.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="center">
-                                    <h5><a href="#">經濟學</a></h5>
-                                    <a href="#" class="blog__btn">我要上架 <span class="arrow_right"></span></a>
-
-                                </div>
-                            </div>
-                        </div>
+                            </div>";
+                        }
+                        ?>
                         <div class="col-lg-12">
                             <div class="product__pagination blog__pagination" align="center">
                                 <a href="#">1</a>

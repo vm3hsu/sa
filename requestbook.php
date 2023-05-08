@@ -226,7 +226,7 @@
             <div class="row">
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
-                    <form action="Bdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
+                    <form action="Rdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
                         <input type=hidden name="dbaction" value="insert">
                         <h1>買家索書表單</h1>
                         <table width=100%>
@@ -239,7 +239,7 @@
                                         <span>書名：</span>
                                     </td>
                                     <td width=45%>
-                                        <input type="text" name="BName" placeholder="請輸入完整的書名" />
+                                        <input type="text" name="RName" placeholder="請輸入完整的書名" />
                                     </td>
                                 </tr>
                                 
