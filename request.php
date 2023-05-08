@@ -151,7 +151,7 @@
                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
 
 
-                        $sql = "select * from request limit 9";
+                        $sql = "select * from request where requested = 0 limit 9";
                         
 
                         $result = mysqli_query($link, $sql);
