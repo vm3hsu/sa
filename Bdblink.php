@@ -43,7 +43,7 @@
             header("location:message.php?message=新增失敗");
         }
     } elseif ($dbaction == "update") {
-        $sql = "update student set SName='$SName', phone='$phone', address='$address' where SID='$SID'";
+        //$sql = "update student set SName='$SName', phone='$phone', address='$address' where SID='$SID'";
         if (mysqli_query($link, $sql)) {
             //echo "新增成功";
             header("location:index.php?method=message&message=修改成功");
