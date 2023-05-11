@@ -15,10 +15,11 @@ $seller = $_GET['seller'];
 $buyer = $_SESSION['account'];
 $link = mysqli_connect('localhost','root','12345678','sa');
 $dbaction = $_GET['dbaction'];
+
 $sql = "delete from shoppingcart where SNumber ='$SNumber'";
 mysqli_query($link,$sql);
 if ($dbaction=="buy"){
-    $sql = "insert into record (RNumber, BNumber, date, buyer, seller) values ( NULL, '$BNumber', '$date', '$buyer', '$seller')";
+    $sql = "insert into record (RNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
     if(mysqli_query($link,$sql)){
         header("location:message.php?message=購買成功");
     }
@@ -26,7 +27,14 @@ if ($dbaction=="buy"){
         header("location:message.php?message=購買失敗");
     }
 }
-  
+else{
+    if(mysqli_query($link,$sql)){
+        header("location:message.php?message=刪除成功");
+    }
+    else{
+        header("location:message.php?message=刪除失敗");
+    } 
+} 
 ?>
 </body>
 </html>
