@@ -172,14 +172,12 @@
                                                         <input type="text" name="name" class="Nickname" autocomplete="on" placeholder="請輸入暱稱" required>
                                                     </fieldset>
                                                 </div>
-                                                <div class="col-lg-6" style="margin-bottom: 30px; margin-left:33%; ">
+                                                <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
                                                     <fieldset>
-                                                        <label for="Contact" class="form-label">
-                                                            <font size="3">聯絡方式:</font>
-                                                        </label><br>
-                                                        <input type="checkbox" value="IG" name="Contact">Instagram<input type="text" name="IG" placeholder="請輸入IG帳號"><br>
-                                                        <input type="checkbox" value="Phone" name="Contact">手機號碼<input type="text" name="phone" placeholder="請輸入09xx-xxx-xxx"><br>
-                                                        <input type="checkbox" value="FB" name="Contact">Facebook<input type="text" name="FB" placeholder="請輸入FB帳號"><br>
+                                                        <label for="Nickname" class="form-label">
+                                                            <font size="3">電郵</font>
+                                                        </label>
+                                                        <input type="text" name="email" class="email" autocomplete="on" placeholder="請輸入電子郵件" required>
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-lg-12" style="margin-bottom: 10px; margin-left:42%; ">

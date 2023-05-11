@@ -3,13 +3,11 @@
   $account = $_POST['account'];
   $password = $_POST['password'];
   $name = $_POST['name'];
-  $IG = $_POST['IG'];
-  $phone = $_POST['phone'];
-  $FB = $_POST['FB'];
+  $email = $_POST['email'];
 
   $link = mysqli_connect('localhost', 'root', '12345678', 'SA');
   if ($dbaction == "insert") {
-    $sql = "insert into user (account, password, name, IG, phone, FB) values ('$account', '$password', '$name', '$IG', '$phone', '$FB')";
+    $sql = "insert into user (account, password, name, email) values ('$account', '$password', '$name', '$email')";
     $result = mysqli_query($link, $sql);
     if ($result) {
       header("location:message.php?message=新增成功");
