@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template b</title>
+    <title>Ogani | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -43,58 +43,31 @@
         left: 5%;
     }
 </style>
-<style type="text/css">
-    #nav {
-        position: relative;
-        width: 20%;
-        height: auto;
-        top: 0;
-        right: auto;
-        bottom: auto;
-        left: 0;
-        color: black
-    }
-
-    #top {
-        position: relative;
-        width: auto;
-        height: 30%;
-        top: 0;
-        right: 0;
-        bottom: auto;
-        left: 5%;
-        color: rgb(11, 0, 0)
-    }
-
-    #mid {
-        position: relative;
-        width: auto;
-        height: 30%;
-        top: 13%;
-        right: 0;
-        bottom: auto;
-        left: 5%;
-        color: rgb(11, 0, 0)
-    }
-
-    #bot {
-        position: relative;
-        width: auto;
-        height: auto;
-        top: 26%;
-        right: 0;
-        bottom: auto;
-        left: 5%;
-        color: rgb(11, 0, 0)
-    }
-</style>
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="shop.php">瀏覽二手書</a></li>
+                <li><a href="request.php">索書專區</a></li>
+                <li><a href="common.php">常見問題</a></li>
+                <li><a href="QA.php">提問專區</a></li>
+                <li class="active"><a href="member.php">會員專區</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Humberger End -->
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -142,8 +115,8 @@
                             <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
-                            <li class="active"><a href="QA.php">提問專區</a></li>
-                            <li><a href="member.php">會員專區</a></li>
+                            <li><a href="QA.php">提問專區</a></li>
+                            <li class="active"><a href="member.php">會員專區</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -158,38 +131,49 @@
         <div class="container">
             <div class="row">
                 <?php include "sidebar.php";?>
-                <div class="col-lg-8 col-md-7">
-                    <div class="row">
-                        <span style="font-family:DFKai-sb;">
-                            <div id="top">
-                            <div style="background-color:#FAFAFA">
-                                <h3><font size="5">&emsp;投訴專區___待您送出後我們會將會審核，並給予投訴&emsp;<br>&emsp;對象標示Warning Sign</font>
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                <form>
-                                    &emsp;投訴對象名稱：<input type="text" name="UserName">
-                                    <br><br>
-                                    &emsp;投訴對象身分：
-                                    <input type="radio" name="UserType" walue="Type1">買家
-                                    <input type="radio" name="UserType" walue="Type1">賣家
-                                    <br><br>
-                                    &emsp;投訴原因(請詳細說明):<br>&emsp;<textarea name="comments" rows="5" cols="60"></textarea>
-                                    <input type="submit" value="送出資料">
-                                    <br>
-                                </form>
+                <div class="col-lg-9" style="margin-bottom: 10px;">
+
+                    <div class="reservation-form">
+                        <div class="container">
+                            <div class="row">
+                                <div style="background-color:#F5F5F5;">
+                                    <form action="logincheck.php" method="post" role="form">
+                                        <div class="row">
+
+                                            <div class="col-lg-12" style="margin-bottom: 20px; margin-left: 30%; margin-top: 10%;">
+                                                <span>
+                                                    <font size="6"><b>會員、管理者登入</b></font>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6" style="margin-bottom: 20px; margin-left:33%; ">
+                                                <fieldset>
+                                                    <label for="Name" class="form-label">
+                                                        <font size="4">帳號</font>
+                                                    </label>
+                                                    <input type="text" name="account" class="Number" autocomplete="on" placeholder="請輸入學號" required>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-6" style="margin-bottom: 30px; margin-left:33%; ">
+                                                <fieldset>
+                                                    <label for="Number" class="form-label">
+                                                        <font size="4">密碼</font>
+                                                    </label>
+                                                    <input type="Password" name="password" class="Password" autocomplete="on" placeholder="請輸入密碼" required>
+                                                </fieldset>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-lg-12" style="margin-bottom: 30px; margin-left:42%; ">
+                                            <fieldset>
+                                                <input type="submit" value="登入">
+                                            </fieldset>
+                                        </div>     
+                                    </form>
+                                    <p align ="center">還不是會員嗎，請點右方註冊會員！<a href="register.php">[註冊會員]</a></p>
+                                </div>
                             </div>
-                            </div>
-                            <div id="bot">
-                            <div style="background-color:#FAFAFA">
-                                <h3><font size="5">&emsp;回饋專區___請告訴我們的工程師你對於此網站的改善<br>&emsp;與建議</font>
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                <form>
-                                    &emsp;歡迎你們提供對於這個平台更好的改善方式：<br>&emsp;<textarea name="comments" rows="8" cols="60"></textarea>
-                                    <input type="submit" value="送出資料">
-                                </form>
-                            </div>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,16 +181,6 @@
     </section>
     <!-- Hero Section End -->
 
-
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
-        <div class="container">
-            <div class="row">
-
-            </div>
-        </div>
-    </section>
-    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
