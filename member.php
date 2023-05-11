@@ -174,7 +174,9 @@
                                 </table>
 
                                 
-                        
+                                <form method="post" action="bookcontent.php">
+    
+    </form>
                                 <table class="table table-bordered border-warning table-hover">
                                     <thead style="background-color:#7fad39">
 
@@ -186,8 +188,8 @@
                                     <tbody>
                                         <tr>
                                             <td></td>
-                                            <td><b>書籍代碼</b></td>
                                             <td><b>書籍名稱</b></td>
+                                            <td><b>價格</b></td>
                                             <td><b>賣家</b></td>
                                             <td><b>功能</b></td>
                                         </tr>

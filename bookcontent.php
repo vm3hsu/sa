@@ -164,8 +164,11 @@
                             echo"
                         
 
-                        
-                        
+                            <form action='bklink.php' method='post' role='form' >
+                            <input type=hidden name='dbaction' value='insert'>
+                            <input type=hidden name='BNumber' value='".$BNumber."'>
+                            
+
                         <div class='authorBrand'>
                             <h1 style='line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;'>經濟學<span style='color:#755e5f; font-weight: normal;font-size:20px;'></span></h1>
                       <hr size='2px' align='top' width='100%'>
