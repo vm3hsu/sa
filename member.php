@@ -173,6 +173,38 @@
                                     </tbody>
                                 </table>
 
+                                
+                        
+                                <table class="table table-bordered border-warning table-hover">
+                                    <thead style="background-color:#7fad39">
+
+                                        <tr>
+                                            <th colspan=4><font color="#ffffff">你的購物車</th>
+                                            <th><input type="button" value="購買"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td><b>書籍代碼</b></td>
+                                            <td><b>書籍名稱</b></td>
+                                            <td><b>賣家</b></td>
+                                            <td><b>功能</b></td>
+                                        </tr>
+<?php
+                        $BNumber = $_GET['BNumber'];
+                        $link = mysqli_connect('localhost','root','12345678','sa');
+   
+                        $sql = "SELECT BName, price, seller from book b, shoppingcart c where b.BNumber = c.BNumber";
+                    
+                        $result = mysqli_query($link,$sql);
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo "<tr><td><input type='checkbox' name='comic' value='a'></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['seller'],
+                            "</td><td><a href=delete6.php?postid=", $row['postid'], ">[刪除]</a></td></tr>";
+                        }
+                    ?>
+                                    </tbody>
+                                </table>
 
 
                                 <table class="table table-bordered border-warning table-hover">
