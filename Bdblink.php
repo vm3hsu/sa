@@ -42,10 +42,10 @@
         $sql = "insert into book (BNumber, BName, BCondition, category, college, price, selled, seller) values (NULL, '$BName', '$BCondition', '$category', '$college', '$price', '$selled', '$seller')";
         if (mysqli_query($link, $sql)) {
             //echo "新增成功";
-            //header("location:message.php?message=新增成功");
+            header("location:message.php?message=新增成功");
         } else {
             //echo "新增失敗";
-            //header("location:message.php?message=新增失敗");
+            header("location:message.php?message=新增失敗");
         }
     } elseif ($dbaction == "update") {
         //$sql = "update student set SName='$SName', phone='$phone', address='$address' where SID='$SID'";

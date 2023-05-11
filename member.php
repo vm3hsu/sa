@@ -152,26 +152,7 @@
                                 <h3>我是買家
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
-                                <table class="table table-bordered border-warning">
-                                    <thead style="background-color:#7fad39">
-                                        <tr>
-                                            <th><font color="#ffffff">你的購物車</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" name="comic" value="a">&nbsp;2隻老虎____黃偉柔<br>
-                                                <input type="checkbox" name="comic" value="b">&nbsp;黃色的巧虎____陳俊宇<br>
-                                                <input type="checkbox" name="comic" value="c">&nbsp;名偵探柯南<br>
-                                                <div align=right>
-                                                    <input type="submit" value="從車裡刪除">
-                                                    <input type="submit" value="確認購買">
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                                
 
                                 
                                 <form method="post" action="bookcontent.php">
@@ -181,13 +162,12 @@
                                     <thead style="background-color:#7fad39">
 
                                         <tr>
-                                            <th colspan=4><font color="#ffffff">你的購物車</th>
-                                            <th><input type="button" value="購買"></th>
+                                            <th colspan=5><font color="#ffffff">你的購物車</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td></td>
                                             <td><b>書籍名稱</b></td>
                                             <td><b>價格</b></td>
                                             <td><b>賣家</b></td>
@@ -197,12 +177,12 @@
                         $BNumber = $_GET['BNumber'];
                         $link = mysqli_connect('localhost','root','12345678','sa');
    
-                        $sql = "SELECT BName, price, seller from book b, shoppingcart c where b.BNumber = c.BNumber";
+                        $sql = "SELECT SNumber, BName, price, name from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td><input type='checkbox' name='comic' value='a'></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['seller'],
-                            "</td><td><a href=delete6.php?postid=", $row['postid'], ">[刪除]</a></td></tr>";
+                            echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                            "</td><td><a href=delete6.php?postid=", $row['postid'], ">[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], ">[刪除]</a></td></tr>";
                         }
                     ?>
                                     </tbody>

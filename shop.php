@@ -145,7 +145,7 @@
                             $sql = "select * from book where college like'%$searchtxt%'";
                         }
                         else{
-                            $sql = "select * from book limit 9";
+                            $sql = "SELECT * FROM `book` ORDER BY BNumber DESC";
                         }
                         
                         $result = mysqli_query($link, $sql);
