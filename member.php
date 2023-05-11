@@ -133,7 +133,7 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
-                        <span style="font-family:DFKai-sb;">
+                        <span style="font-family:DFKai-sb;width:77%">
                             <div id="top">
                                 <h3>
                                 <?php
@@ -162,7 +162,7 @@
                                     <thead style="background-color:#7fad39">
 
                                         <tr>
-                                            <th colspan=5><font color="#ffffff">你的購物車</th>
+                                            <th colspan=4><font color="#ffffff">你的購物車</th>
                                             
                                         </tr>
                                     </thead>
@@ -173,16 +173,15 @@
                                             <td><b>賣家</b></td>
                                             <td><b>功能</b></td>
                                         </tr>
-<?php
-                        $BNumber = $_GET['BNumber'];
+                        <?php
                         $link = mysqli_connect('localhost','root','12345678','sa');
-   
-                        $sql = "SELECT SNumber, BName, price, name from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
+                        $sql = "SELECT SNumber, BName, price, name, seller , b.BNumber from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=delete6.php?postid=", $row['postid'], ">[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], ">[刪除]</a></td></tr>";
+                            echo "                          
+                            <tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                            "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
                         }
                     ?>
                                     </tbody>
@@ -192,20 +191,32 @@
                                 <table class="table table-bordered border-warning table-hover">
                                     <thead style="background-color:#7fad39">
                                         <tr>
-                                            <th><font color="#ffffff">確認購買書籍的賣家聯絡方式</th>
-                                            <th><font color="#ffffff">賣家是否接單</th>
+                                            <th colspan=4><font color="#ffffff">你的訂單</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>2隻老虎____黃偉柔,Line ID:09XXXXX985</td>
-                                            <td>否,您還不能聯絡賣家</td>
+                                        <td><b>書籍名稱</b></td>
+                                            <td><b>價格</b></td>
+                                            <td><b>賣家</b></td>
+                                            
                                         </tr>
-                                        <tr>
-                                            <td>黃色的巧虎____陳俊宇,IG:IAM_SMART</td>
-                                            <td>是,您已可以聯絡賣家</td>
-                                        </tr>
+                                        
 
+                                        <?php
+                                        
+                        
+                        $link = mysqli_connect('localhost','root','12345678','sa');
+   
+                        $sql = "SELECT BName, price , name FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
+                    
+                        $result = mysqli_query($link,$sql);
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                            "</td><td><input type='button' value='取消'></td></tr>";
+                        }
+                    ?>
                                     </tbody>
                                 </table>
                             </div>

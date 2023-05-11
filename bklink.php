@@ -23,10 +23,10 @@ session_start();
 if($dbaction=="insert"){
     $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
     if(mysqli_query($link,$sql)){
-        header("location:message.php?message=報名成功");
+        header("location:message.php?message=已加入購物車");
     }    
     else{
-        header("location:message.php?message=報名失敗");
+        header("location:message.php?message=加入失敗");
     }
                     
    
