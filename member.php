@@ -209,12 +209,12 @@
                         
                         $link = mysqli_connect('localhost','root','12345678','sa');
    
-                        $sql = "SELECT BName, price , name FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
+                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
                             echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><input type='button' value='取消'></td></tr>";
+                            "</td><td><a href=delete.php?BNumber=", $row['BNumber'], "&dbaction=cancel>[取消]</a></td></tr>";
                         }
                     ?>
                                     </tbody>

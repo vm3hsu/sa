@@ -138,14 +138,14 @@
 
                         if($_POST['searchtxt']<>""){
                             $searchtxt = $_POST['searchtxt'];
-                            $sql = "select * from book where BName like'%$searchtxt%'";
+                            $sql = "select * from book where BName like'%$searchtxt%' AND selled = 0";
                         }
                         else if($_GET['searchtxt']<>""){
                             $searchtxt = $_GET['searchtxt'];
-                            $sql = "select * from book where college like'%$searchtxt%'";
+                            $sql = "select * from book where college like'%$searchtxt%' AND selled = 0";
                         }
                         else{
-                            $sql = "SELECT * FROM `book` ORDER BY BNumber DESC";
+                            $sql = "SELECT * FROM `book` where selled = 0 ORDER BY BNumber DESC";
                         }
                         
                         $result = mysqli_query($link, $sql);

@@ -16,18 +16,33 @@ $buyer = $_SESSION['account'];
 $link = mysqli_connect('localhost','root','12345678','sa');
 $dbaction = $_GET['dbaction'];
 
-$sql = "delete from shoppingcart where SNumber ='$SNumber'";
-mysqli_query($link,$sql);
 if ($dbaction=="buy"){
+    $sql = "delete from shoppingcart where SNumber ='$SNumber'";
+    mysqli_query($link,$sql);
     $sql = "insert into record (RNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
     if(mysqli_query($link,$sql)){
+        $sql = "UPDATE book SET selled = '1' WHERE BNumber = '$BNumber'";
+        mysqli_query($link,$sql);
         header("location:message.php?message=購買成功");
     }
     else{
         header("location:message.php?message=購買失敗");
     }
 }
+elseif ($dbaction=="cancel"){
+    $sql = "UPDATE book SET selled = 0 WHERE BNumber = '$BNumber'";
+    if(mysqli_query($link,$sql)){
+        $sql = "delete from record where BNumber = '$BNumber'";
+        mysqli_query($link,$sql);
+        header("location:message.php?message=取消成功");
+    }
+    else{
+        header("location:message.php?message=取消失敗");
+    }
+}
 else{
+    $sql = "delete from shoppingcart where SNumber ='$SNumber'";
+    mysqli_query($link,$sql);
     if(mysqli_query($link,$sql)){
         header("location:message.php?message=刪除成功");
     }
