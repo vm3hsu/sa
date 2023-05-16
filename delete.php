@@ -19,7 +19,7 @@ $dbaction = $_GET['dbaction'];
 if ($dbaction=="buy"){
     $sql = "delete from shoppingcart where SNumber ='$SNumber'";
     mysqli_query($link,$sql);
-    $sql = "insert into record (RNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
+    $sql = "insert into record (SNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
     if(mysqli_query($link,$sql)){
         $sql = "UPDATE book SET selled = '1' WHERE BNumber = '$BNumber'";
         mysqli_query($link,$sql);
