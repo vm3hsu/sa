@@ -47,7 +47,7 @@
             }
             $is_upload = move_uploaded_file($_FILES["file"]["tmp_name"],"bookpicture/".$BNumber."/".$_FILES["file"]['name']);
             rename("bookpicture/".$BNumber.$_FILES["file"]['name'],"bookpicture/".$BNumber.'1.png');
-            echo rename("bookpicture/".$BNumber.$_FILES["file"]['name'],"bookpicture/".$BNumber.'1.png');
+            echo rename("bookpicture/".$BNumber."/".$_FILES["file"]['name'],"bookpicture/".$BNumber.'/1.png');
             header("location:message.php?message=新增成功");
         } else {
             //echo "新增失敗";

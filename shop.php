@@ -154,7 +154,7 @@
                             "<div class='col-lg-4 col-md-4 col-sm-4'>
                                 <div class='blog__item'>
                                     <div class='blog__item__pic'>
-                                        <img src='img/blog/blog-2.jpg' alt=''>
+                                        <img src='bookpicture/".$row['BNumber']."/1.png' alt=''>
                                     </div>
                                     <div class='blog__item__text' align='center'>
                                         <h5><a href='bookcontent.php?BNumber=".$row['BNumber']."'>".$row['BName']."</a></h5>

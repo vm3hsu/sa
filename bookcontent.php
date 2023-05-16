@@ -144,15 +144,6 @@
                             <hr size="2px" align="top" width="100%">
    
                         </div>
-                        <div class="col-lg-5 col-md-5 col-sm-5">
-                            <div class="blog__item">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="right">
-                                </div>
-                            </div>
-                        </div>
                         <?php
                         $BNumber = $_GET['BNumber'];
                         $link = mysqli_connect('localhost','root','12345678','sa');
@@ -162,6 +153,15 @@
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
                             echo"
+                            <div class='col-lg-5 col-md-5 col-sm-5'>
+                            <div class='blog__item'>
+                                <div class='blog__item__pic'>
+                                    <img src='bookpicture/".$BNumber."/1.png' alt=''>
+                                </div>
+                                <div class='blog__item__text' align='right'>
+                                </div>
+                            </div>
+                            </div>
                         
 
                             <form action='bklink.php' method='post' role='form' >
@@ -181,15 +181,6 @@
                      </div>";
                         }
                         ?>
-                        <div class="col-lg-7 col-md-7 col-sm-7">
-                            <div class="row">
-                                <div class="blog__item__pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="blog__item__text" align="right">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
