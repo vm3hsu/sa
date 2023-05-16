@@ -19,7 +19,7 @@ $dbaction = $_GET['dbaction'];
 if ($dbaction=="buy"){
     $sql = "delete from shoppingcart where SNumber ='$SNumber'";
     mysqli_query($link,$sql);
-    $sql = "insert into record (RNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
+    $sql = "insert into record (SNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
     if(mysqli_query($link,$sql)){
         $sql = "UPDATE book SET selled = '1' WHERE BNumber = '$BNumber'";
         mysqli_query($link,$sql);
@@ -38,6 +38,18 @@ elseif ($dbaction=="cancel"){
     }
     else{
         header("location:message.php?message=取消失敗");
+    }
+}
+elseif ($dbaction=="remove"){
+    $sql = "delete from shoppingcart s, book b where s.BNumber = b.BNumber";
+    mysqli_query($link,$sql);
+    $sql = "delete from book where BNumber ='$BNumber'";
+    mysqli_query($link,$sql);
+    if(mysqli_query($link,$sql)){
+        header("location:message.php?message=下架成功");
+    }
+    else{
+        header("location:message.php?message=下架失敗");
     }
 }
 else{

@@ -230,19 +230,27 @@
                                     <thead style="background-color:#7fad39">
 
                                         <tr>
-                                            <th><font color="#ffffff">已上架書籍</th>
-                                            <th align="right"><font color="#ffffff">書籍狀態</th>
+                                            <th colspan=2><font color="#ffffff">已上架書籍</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>喵咪吃罐頭</td>
-                                            <td>
-                                                <input type="button" value="下架此書">
-                                                <input type="button" value="已售出">
-                                            </td>
+                                            <td><b>書籍名稱</b></td>
+                                            <td></td>
                                         </tr>
 
+                                        <?php
+                        $link = mysqli_connect('localhost','root','12345678','sa');
+                        $sql = "SELECT * from book where seller = ".$_SESSION['account'];
+                    
+                        $result = mysqli_query($link,$sql);
+                        while ($row=mysqli_fetch_assoc($result)){
+                            echo "                          
+                            <tr><td>", $row['BName'], "</td>
+                            <td><a href=delete.php?BNumber=", $row['BNumber'], "&dbaction=remove>[下架此書]</a></td></tr>";
+                        }
+                    ?>
+                                    
                                     </tbody>
                                 </table>
                             </div>
