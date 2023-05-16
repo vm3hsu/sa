@@ -137,22 +137,24 @@
                     <div class="row">
                         <div class="col-sm-12 col-xs-12 site_map" style="margin-bottom: 15px;">
                 <span>
-             <a class="linkStyle01" href="index.php">首頁</a>
-                </span>
-                <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="shop.php">買二手書</a></span>
-                <span class="span01">&gt;</span><span class="span02"><a class="linkStyle01" href="index.php">管理學院</a></span>
-                            <hr size="2px" align="top" width="100%">
    
                         </div>
                         <?php
                         $BNumber = $_GET['BNumber'];
                         $link = mysqli_connect('localhost','root','12345678','sa');
    
-                        $sql = "SELECT name ,BName ,price ,BCondition FROM book b, user u WHERE b.seller=u.account and BNumber=".$BNumber."";
+                        $sql = "SELECT name ,BName ,price ,BCondition, category, college FROM book b, user u WHERE b.seller=u.account and BNumber=".$BNumber."";
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
                             echo"
+                            <a class='linkStyle01' href='index.php'>首頁</a>
+                </span>
+                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>瀏覽二手書</a></span>
+                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>類別：".$row['category']."</a></span>
+                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='index.php'>學院：".$row['college']."</a></span>
+                
+                            <hr size='2px' align='top' width=100%>
                             <div class='col-lg-5 col-md-5 col-sm-5'>
                             <div class='blog__item'>
                                 <div class='blog__item__pic'>
