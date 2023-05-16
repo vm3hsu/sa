@@ -150,6 +150,8 @@
                 <div style="background-color:#FAFAFA">
                     <form action="Bdblink.php" method="post" enctype="multipart/form-data">
                         <input type=hidden name="dbaction" value="insert">
+                        <input type=hidden name="BName" value="<?php echo $RName; ?>">
+                        <input type=hidden name="category" value="<?php echo $category; ?>">
                         <h1><font size="6">&emsp;賣家上架書籍表單</font></h1><br>
                         <table width=100%>
                             <tbody width=100%>

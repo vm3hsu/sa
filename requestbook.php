@@ -232,7 +232,7 @@
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
-                                    <td width=50% rowspan="4"><input type=file name="uploadfile" accept=".jpg,.jpeg,.png"></td>
+                                    <td width=50% rowspan="4"><input type=file name="file" accept=".jpg,.jpeg,.png"></td>
                                 </tr>
                                 <tr>
                                     <td width=5%>
