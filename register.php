@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>輔仁2手書平台</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -65,7 +65,17 @@
                 <li><a href="request.php">索書專區</a></li>
                 <li><a href="common.php">常見問題</a></li>
                 <li><a href="QA.php">提問專區</a></li>
-                <li class="active"><a href="member.php">會員專區</a></li>
+                <?php
+                    session_start();
+                    if($_SESSION['name']=="")
+                    {
+                        echo"<li><a href='member2.php'>會員專區</a></li>";
+                    }
+                    else
+                    {
+                        echo"<li><a href='member.php'>會員專區</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -119,7 +129,17 @@
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
                             <li><a href="QA.php">提問專區</a></li>
-                            <li class="active"><a href="member.php">會員專區</a></li>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<li class='active'><a href='member2.php'>會員專區</a></li>";
+                                }
+                                else
+                                {
+                                    echo"<li class='active'><a href='member.php'>會員專區</a></li>";
+                                }
+                            ?>
                         </ul>
                     </nav>
                 </div>

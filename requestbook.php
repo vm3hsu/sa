@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>輔仁2手書平台</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -44,102 +44,6 @@
     }
 
 
-    .basic-grey {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 700px;
-        background: #F7F7F7;
-        padding: 25px 15px 25px 10px;
-        font: 12px Georgia, "Times New Roman", Times, serif;
-        color: #888;
-        text-shadow: 1px 1px 1px #FFF;
-        border: 1px solid #E4E4E4;
-    }
-
-    .basic-grey h1 {
-        font-size: 25px;
-        padding: 0px 0px 10px 40px;
-        display: block;
-        border-bottom: 1px solid #E4E4E4;
-        margin: -10px -15px 30px -10px;
-        ;
-        color: #888;
-    }
-
-    .basic-grey h1>span {
-        display: block;
-        font-size: 11px;
-    }
-
-    .basic-grey label {
-        display: block;
-        margin: 0px;
-    }
-
-    .basic-grey label>span {
-        float: left;
-        width: 30%;
-        text-align: right;
-        padding-right: 10px;
-        margin-top: 10px;
-        color: #888;
-    }
-
-    .basic-grey input[type="text"],
-    .basic-grey input[type="email"],
-    .basic-grey textarea,
-    .basic-grey select {
-        border: 1px solid #DADADA;
-        color: #888;
-        height: 30px;
-        margin-bottom: 16px;
-        margin-right: 6px;
-        margin-top: 2px;
-        outline: 0 none;
-        padding: 3px 3px 3px 5px;
-        width: 90%;
-        font-size: 12px;
-        line-height: 15px;
-        box-shadow: inset 0px 1px 4px #ECECEC;
-        -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-        -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-    }
-
-    .basic-grey textarea {
-        padding: 5px 3px 3px 5px;
-    }
-
-    .basic-grey select {
-        background: #FFF url('down-arrow.png') no-repeat right;
-        background: #FFF url('down-arrow.png') no-repeat right;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 0.01px;
-        text-overflow: '';
-        width: 60%;
-        height: 35px;
-        line-height: 25px;
-    }
-
-    .basic-grey textarea {
-        height: 100px;
-    }
-
-    .basic-grey .button {
-        background: #E27575;
-        border: none;
-        padding: 10px 25px 10px 25px;
-        color: #FFF;
-        box-shadow: 1px 1px 5px #B6B6B6;
-        border-radius: 3px;
-        text-shadow: 1px 1px 1px #9E3F3F;
-        cursor: pointer;
-    }
-
-    .basic-grey .button:hover {
-        background: #CF7A7A
-    }
 </style>
 
 <body>
@@ -160,7 +64,17 @@
                 <li  class="active"><a href="request.php">索書專區</a></li>
                 <li><a href="common.php">常見問題</a></li>
                 <li><a href="QA.php">提問專區</a></li>
-                <li><a href="member.php">會員專區</a></li>
+                <?php
+                    session_start();
+                    if($_SESSION['name']=="")
+                    {
+                        echo"<li><a href='member2.php'>會員專區</a></li>";
+                    }
+                    else
+                    {
+                        echo"<li><a href='member.php'>會員專區</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -178,16 +92,19 @@
                 <div class="col-lg-7">
                     <div class="header__cart">
                         <table id="login">
-                            <?php
+                        <?php
                             session_start();
-                            if ($_SESSION['name'] == "") {
-                                echo "<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
-                            } else {
-                                echo "<tr><td>" . $_SESSION['name'] . "，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
-                                echo"<tr><td colspan=2>
-                                    <div><a href='member.php'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='30' fill='currentColor' class='bi bi-cart4' viewBox='0 0 16 16'><path d='M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/></svg><font style='font-size: x-large;vertical-align: top;'>購物車</font></a></div></td></tr>";
+                            if($_SESSION['name']=="")
+                            {
+                                echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
                             }
-                            ?>
+                            else
+                            {
+                                echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
+                                echo"<tr><td colspan=2>
+                                <div><a href='member.php'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='30' fill='currentColor' class='bi bi-cart4' viewBox='0 0 16 16'><path d='M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/></svg><font style='font-size: x-large;vertical-align: top;'>購物車</font></a></div></td></tr>";
+                            }
+                        ?>
                         </table>
                     </div>
                 </div>
@@ -212,7 +129,17 @@
                             <li class="active"><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
                             <li><a href="QA.php">提問專區</a></li>
-                            <li><a href="member.php">會員專區</a></li>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<li><a href='member2.php'>會員專區</a></li>";
+                                }
+                                else
+                                {
+                                    echo"<li><a href='member.php'>會員專區</a></li>";
+                                }
+                            ?>
                         </ul>
                     </nav>
                 </div>
@@ -228,9 +155,10 @@
             <div class="row">
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
-                    <form action="Rdblink.php" method="post" class="basic-grey" enctype="multipart/form-data">
-                        <input type=hidden name="dbaction" value="insert">
-                        <h1>買家索書表單</h1>
+                <div style="background-color:#FAFAFA">
+                    <form action="Rdblink.php" method="post" enctype="multipart/form-data">
+                    <input type=hidden name="dbaction" value="insert">
+                        <h1><font size="6">&emsp;買家索書表單</font></h1><br>
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
@@ -284,8 +212,9 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> 
                     </form>
+                </div>
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ if ($dbaction=="buy"){
     mysqli_query($link,$sql);
     $sql = "insert into record (SNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
     if(mysqli_query($link,$sql)){
-        $sql = "UPDATE book SET selled = '1' WHERE BNumber = '$BNumber'";
+        $sql = "UPDATE book SET selled = 1 WHERE BNumber = '$BNumber'";
         mysqli_query($link,$sql);
         header("location:message.php?message=購買成功");
     }

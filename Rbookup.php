@@ -7,7 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>輔仁2手書平台</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -65,7 +65,17 @@
                 <li><a href="request.php">索書專區</a></li>
                 <li><a href="common.php">常見問題</a></li>
                 <li><a href="QA.php">提問專區</a></li>
-                <li><a href="member.php">會員專區</a></li>
+                <?php
+                    session_start();
+                    if($_SESSION['name']=="")
+                    {
+                        echo"<li><a href='member2.php'>會員專區</a></li>";
+                    }
+                    else
+                    {
+                        echo"<li><a href='member.php'>會員專區</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -119,7 +129,17 @@
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
                             <li><a href="QA.php">提問專區</a></li>
-                            <li><a href="member.php">會員專區</a></li>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<li><a href='member2.php'>會員專區</a></li>";
+                                }
+                                else
+                                {
+                                    echo"<li><a href='member.php'>會員專區</a></li>";
+                                }
+                            ?>
                         </ul>
                     </nav>
                 </div>
@@ -211,7 +231,7 @@
                                         <table>
                                             <tr>
                                                 <td>
-                                                    <input type="radio" name="new" value="全新">全新
+                                                    <input type="radio" name="new" value="全新" checked>全新
                                                 </td>
                                                 <td>
                                                     <input type="radio" name="new" value="非全新">非全新
@@ -219,7 +239,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="radio" name="yellowing" value="無自然泛黃">無自然泛黃
+                                                    <input type="radio" name="yellowing" value="無自然泛黃" checked>無自然泛黃
                                                 </td>
                                                 <td>
                                                     <input type="radio" name="yellowing" value="有自然泛黃">有自然泛黃
@@ -227,7 +247,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="radio" name="dirty" value="無髒污">無髒污
+                                                    <input type="radio" name="dirty" value="無髒污" checked>無髒污
                                                 </td>
                                                 <td>
                                                     <input type="radio" name="dirty" value="有髒污">有髒污
@@ -235,7 +255,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="wrinkle" value="無皺褶">無皺褶</label>
+                                                    <label><input type="radio" name="wrinkle" value="無皺褶" checked>無皺褶</label>
                                                 </td>
                                                 <td>
                                                     <label><input type="radio" name="wrinkle" value="有皺褶">有皺褶</label>
@@ -243,7 +263,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="lack" value="無缺頁">無缺頁</label>
+                                                    <label><input type="radio" name="lack" value="無缺頁" checked>無缺頁</label>
                                                 </td>
                                                 <td>
                                                     <label><input type="radio" name="lack" value="有缺頁">有缺頁</label>
@@ -251,7 +271,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <label><input type="radio" name="note" value="無筆記">無筆記</label>
+                                                    <label><input type="radio" name="note" value="無筆記" checked>無筆記</label>
                                                 </td>
                                                 <td>
                                                     <label><input type="radio" name="note" value="有筆記">有筆記</label>
