@@ -43,41 +43,58 @@
         left: 5%;
     }
 </style>
+<style type="text/css">
+    #nav {
+        position: relative;
+        width: 20%;
+        height: auto;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        color: black
+    }
+
+    #top {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+
+    #mid {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 13%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+
+    #bot {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 26%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+</style>
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="shop.php">瀏覽二手書</a></li>
-                <li><a href="request.php">索書專區</a></li>
-                <li><a href="common.php">常見問題</a></li>
-                <li><a href="QA.php">提問專區</a></li>
-                <?php
-                    session_start();
-                    if($_SESSION['name']=="")
-                    {
-                        echo"<li class='active'><a href='member2.php'>會員專區</a></li>";
-                    }
-                    else
-                    {
-                        echo"<li class='active'><a href='member.php'>會員專區</a></li>";
-                    }
-                ?>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-    <!-- Humberger End -->
+
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -127,16 +144,16 @@
                             <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
-                            <li><a href="QA.php">提問專區</a></li>
+                            <li class="active"><a href="QA.php">提問專區</a></li>
                             <?php
                                 session_start();
                                 if($_SESSION['name']=="")
                                 {
-                                    echo"<li class='active'><a href='member2.php'>會員專區</a></li>";
+                                    echo"<li><a href='member2.php'>會員專區</a></li>";
                                 }
                                 else
                                 {
-                                    echo"<li class='active'><a href='member.php'>會員專區</a></li>";
+                                    echo"<li><a href='member.php'>會員專區</a></li>";
                                 }
                             ?>
                         </ul>
@@ -148,172 +165,65 @@
     <!-- Header Section End -->
 
 
+    <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
                 <?php include "sidebar.php";?>
-                <div class="col-lg-1"></div>
                 <div class="col-lg-8 col-md-7">
                     <div class="row">
-                        <span style="font-family:DFKai-sb;width:77%">
+                        <span style="font-family:DFKai-sb;">
                             <div id="top">
-                                <h3>
+                            <div style="background-color:#FAFAFA">
+                                <h3><font size="5">&emsp;取消訂單</font>
+                                    <hr size="2px" align="top" width="100%">
+                                </h3>
                                 <?php
-                                session_start();
-                                if($_SESSION['name']=="")
+                                $BNumber=$_GET['BNumber'];
+
+                                $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+                                $sql = "SELECT BName, name FROM book b, user u WHERE b.BNumber = ".$BNumber." AND b.seller = u.account";
+                                $result = mysqli_query($link,$sql);
+                        
+                                if($row=mysqli_fetch_assoc($result))
                                 {
-                                    echo"<tr><td>請先<a href='SAlogin.php'>登入</a></td><td>或<a href='register.php'>註冊</a></td></tr>";
-                                }
-                                else
-                                {
-                                    echo"<tr><td>你好，".$_SESSION['name']." !</td></tr>";
+                                    $BName=$row['BName'];
+                                    $name=$row['name'];
                                 }
                                 ?>
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                <h3>我是買家
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                
-
-                                
-                                <form method="post" action="bookcontent.php">
-    
-    </form>
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=4><font color="#ffffff">你的購物車</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>書籍名稱</b></td>
-                                            <td><b>價格</b></td>
-                                            <td><b>賣家</b></td>
-                                            <td><b>功能</b></td>
-                                        </tr>
-                        <?php
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-                        $sql = "SELECT SNumber, BName, price, name, seller , b.BNumber from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo "                          
-                            <tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
-                        }
-                    ?>
-                                    </tbody>
-                                </table>
-
-                                <hr size="2px" align="top" width="100%">
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-                                        <tr>
-                                            <th colspan=4><font color="#ffffff">你的訂單</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        <td><b>書籍名稱</b></td>
-                                            <td><b>價格</b></td>
-                                            <td><b>賣家</b></td>
-                                            
-                                        </tr>
-                                        
-
-                                        <?php
-                                        
-                        
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-   
-                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=reason.php?BNumber=", $row['BNumber'], ">[取消]</a></td></tr>";
-                        }
-                    ?>
-                                    </tbody>
-                                </table>
+                                <form action="delete.php" method="get">
+                                    <input type=hidden name="dbaction" value="cancel">
+                                    <input type=hidden name="BNumber" value="<?php echo $BNumber; ?>">
+                                    &emsp;書籍名稱：<?php echo $BName; ?>
+                                    <br><br>
+                                    &emsp;賣家：<?php echo $name; ?>
+                                    <br><br>
+                                    &emsp;取消原因(請詳細說明):<br>&emsp;<textarea name="comments" rows="5" cols="60"></textarea>
+                                    <br><br>
+                                    <input type="submit" value="送出資料">
+                                    <br>
+                                </form>
                             </div>
-                            <div id="mid">
-                            <hr size="2px" align="top" width="100%">
-                                <h3>我是賣家<br>
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-                                
-
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=2><font color="#ffffff">已上架書籍</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>書籍名稱</b></td>
-                                            <td></td>
-                                        </tr>
-
-                                        <?php
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-                        $sql = "SELECT * from book where seller = ".$_SESSION['account'];
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo "                          
-                            <tr><td>", $row['BName'], "</td>
-                            <td><a href=delete.php?BNumber=", $row['BNumber'], "&dbaction=remove>[下架此書]</a></td></tr>";
-                        }
-                    ?>
-                                    
-                                    </tbody>
-                                </table>
-
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=3><font color="#ffffff">是否同意取消訂單</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>書籍名稱</b></td>
-                                            <td><b>取消原因</b></td>
-                                            <td><b>是否同意</b></td>
-                                        </tr>
-
-                                        <?php
-                                        
-                        
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-   
-                        $sql = "SELECT BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
-                        }
-                    ?>
-
-                                        </tbody>
-                                </table>    
                             </div>
+                            
                         </span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Hero Section End -->
+
+
+    <!-- Blog Section Begin -->
+    <section class="blog spad">
+        <div class="container">
+            <div class="row">
+
+            </div>
         </div>
     </section>
+    <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">

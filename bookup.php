@@ -164,7 +164,7 @@
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
-                                    <td width=50% rowspan="5"><input type="file" name="file" accept=".jpg,.jpeg,.png"></td>
+                                    <td width=50% rowspan="5"><input type="file" name="file[]" accept=".jpg,.jpeg,.png" multiple></td>
                                     <td width=5%>
                                         <span>書名：</span>
                                     </td>

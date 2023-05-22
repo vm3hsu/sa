@@ -22,13 +22,6 @@
     $seller = $_SESSION['account'];
     $image_new_name = "1";
     $image_upload_path = "bookpicture/";
-
-        echo"檔案名稱".$_FILES["file"]['name']."<br/>";
-        echo"檔案類型".$_FILES["file"]['type']."<br/>";
-        echo"檔案大小".($_FILES["file"]['size']/1024)."KB<br/>";
-        echo"暫存名稱".$_FILES["file"]['tmp_name']."<br/>";
-        echo $_FILES['file']['error'];
-        echo basename($_FILES["file"]['name'],'jpg');
     
     $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
     if ($dbaction == "insert") {
@@ -45,9 +38,18 @@
             if (!is_dir($path)) {
                 mkdir($path, 0777, true);
             }
-            $is_upload = move_uploaded_file($_FILES["file"]["tmp_name"],"bookpicture/".$BNumber."/".$_FILES["file"]['name']);
-            rename("bookpicture/".$BNumber."/".$_FILES["file"]['name'],"bookpicture/".$BNumber.'/1.png');
-            echo rename("bookpicture/".$BNumber."/".$_FILES["file"]['name'],"bookpicture/".$BNumber.'/1.png');
+            
+            try{
+                for($i=0;$i<3;$i++){
+                    $is_upload = move_uploaded_file($_FILES["file"]["tmp_name"][$i],"bookpicture/".$BNumber."/".$_FILES["file"]['name'][$i]);
+                    rename("bookpicture/".$BNumber."/".$_FILES["file"]['name'][$i],"bookpicture/".$BNumber.'/'.$i.'.png');
+
+                }
+                
+            }
+            catch(Exception $e){}
+            
+            
             $sql = "UPDATE request SET requested = 1 WHERE RName = '$BName' and category = '$category'";
             mysqli_query($link, $sql);
             header("location:message.php?message=新增成功");

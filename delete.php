@@ -29,7 +29,7 @@ if ($dbaction=="buy"){
         header("location:message.php?message=購買失敗");
     }
 }
-elseif ($dbaction=="cancel"){
+elseif ($dbaction=="agree"){
     $sql = "UPDATE book SET selled = 0 WHERE BNumber = '$BNumber'";
     if(mysqli_query($link,$sql)){
         $sql = "delete from record where BNumber = '$BNumber'";
@@ -38,6 +38,17 @@ elseif ($dbaction=="cancel"){
     }
     else{
         header("location:message.php?message=取消失敗");
+    }
+}
+elseif ($dbaction=="cancel"){
+    $reason = $_GET['comments'];
+    $sql = "UPDATE record SET reason = '$reason' WHERE BNumber = '$BNumber'";
+    if(mysqli_query($link,$sql)){
+
+        header("location:message.php?message=申請成功");
+    }
+    else{
+        header("location:message.php?message=申請失敗");
     }
 }
 elseif ($dbaction=="remove"){
