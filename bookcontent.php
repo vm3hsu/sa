@@ -196,7 +196,7 @@
                         <div class='authorBrand'>
                             <h1 style='line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;'>".$row['BName']."<span style='color:#755e5f; font-weight: normal;font-size:20px;'></span></h1>
                       <hr size='2px' align='top' width='100%'>
-                            <p style='margin:10px 0 0 0;'><span>賣家：".$row['name'].";</span></p>
+                            <p style='margin:10px 0 0 0;'><span>賣家：<a href=review.php  style='color:orange;'>".$row['name']."</a>;</span></p>
                       <p style='margin:10px 0 0 0;'><span>售價：".$row['price'].";</span></p>
                       <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>
 
