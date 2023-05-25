@@ -203,7 +203,7 @@
                         while ($row=mysqli_fetch_assoc($result)){
                             echo "                          
                             <tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
+                            "</td><td><a href=transaction.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
                         }
                     ?>
                                     </tbody>
