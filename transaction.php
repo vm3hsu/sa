@@ -158,7 +158,7 @@
                 <?php include "sidebar.php"; ?>
                 <div class="col-lg-9">
                     <div style="background-color:#FAFAFA">
-                        <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <form action="delete.php" method="get" enctype="multipart/form-data">
                             <input type=hidden name="dbaction" value="buy">
                             <h1><font size="6">&emsp;買賣家交易時間地點表單</font></h1><br>
                             <table width=100% >
