@@ -110,7 +110,7 @@
                         <button type="submit" style="border: none;background-color: #ffffff;color: #fff;width: 15%"><img src="img/search.png" style="width:85%;height:85%"></button>
                     </form>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9">12
                     <nav class="header__menu" id="menu">
                         <ul>
                             <li><a href="index.php">首頁</a></li>
