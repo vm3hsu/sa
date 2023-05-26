@@ -51,7 +51,17 @@
                 <li><a href="shop.php">瀏覽二手書</a></li>
                 <li class="active"><a href="request.php">索書專區</a></li>
                 <li><a href="common.php">常見問題</a></li>
-                <li><a href="QA.php">提問專區</a></li>
+                <?php
+                    session_start();
+                    if($_SESSION['name']=="")
+                    {
+                        echo"<li><a href='member2.php?show_alert=true'>提問專區</a></li>";
+                    }
+                    else
+                    {
+                        echo"<li class='active'><a href='QA.php'>提問專區</a></li>";
+                    }
+                ?>
                 <?php
                     session_start();
                     if($_SESSION['name']=="")
@@ -110,14 +120,24 @@
                         <button type="submit" style="border: none;background-color: #ffffff;color: #fff;width: 15%"><img src="img/search.png" style="width:85%;height:85%"></button>
                     </form>
                 </div>
-                <div class="col-lg-9">12
+                <div class="col-lg-9">
                     <nav class="header__menu" id="menu">
                         <ul>
                             <li><a href="index.php">首頁</a></li>
                             <li><a href="shop.php">瀏覽二手書</a></li>
                             <li class="active"><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
-                            <li><a href="QA.php">提問專區</a></li>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<li><a href='member2.php?show_alert=true'>提問專區</a></li>";
+                                }
+                                else
+                                {
+                                    echo"<li class='active'><a href='QA.php'>提問專區</a></li>";
+                                }
+                            ?>
                             <?php
                                 session_start();
                                 if($_SESSION['name']=="")
