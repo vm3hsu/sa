@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>輔仁2手書平台</title>
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -21,10 +23,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #DIV_A {
-        box-shadow: 3px 3px 9px yellow;
-    }
-
     #login {
         position: absolute;
         width: auto;
@@ -126,9 +124,9 @@
                     <nav class="header__menu" id="menu">
                         <ul>
                             <li><a href="index.php">首頁</a></li>
-                            <li class="active"><a href="shop.php">瀏覽二手書</a></li>
+                            <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
-                            <li><a href="common.php">常見問題</a></li>
+                            <li class="active"><a href="common.php">常見問題</a></li>
                             <li><a href="QA.php">提問專區</a></li>
                             <?php
                                 session_start();
@@ -150,69 +148,76 @@
     <!-- Header Section End -->
 
 
-    <!-- Blog Section Begin -->
+    <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
-            <?php include "sidebar.php";?>
-                <div class="col-lg-8 col-md-8">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12 site_map" style="margin-bottom: 15px;">
-                <span>
-   
-                        </div>
-                        <?php
-                        $BNumber = $_GET['BNumber'];
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-   
-                        $sql = "SELECT name ,BName ,price ,BCondition, category, college FROM book b, user u WHERE b.seller=u.account and BNumber=".$BNumber."";
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo"
-                            <a class='linkStyle01' href='index.php'>首頁</a>
-                </span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>瀏覽二手書</a></span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>類別：".$row['category']."</a></span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='index.php'>學院：".$row['college']."</a></span>
-                
-                            <hr size='2px' align='top' width=100%>
-                            <div class='col-lg-5 col-md-5 col-sm-5'>
-                            <div class='blog__item'>
-                                <div class='blog__item__pic'>
-                                    <img src='bookpicture/".$BNumber."/1.png' alt=''>
+                <?php include "sidebar.php";?>
+                <div class="col-lg-9">
+                    <div style="background-color:#F5F5F5">
+                        
+                            <div class='hero__text'>
+                                <span>
+                                    <font size='6'>(使用者)的評價<i class="fa fa-comments"></i></font>
+                                </span>
+                                <p>User's Reviews</p>
+
+                                <div style='width:95%;
+                                        height:100px;  
+                                        background-color:#FCFCFC;
+                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;'>
+
+                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                            font-size:23px; font-weight:bold;">如何買書？</div>
+                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                            font-size:18px; font-weight:light;">在"瀏覽二手書"中找到你想要的書並按下確認購買，
+                                        然後等待賣家同意給你他的連絡資訊後，便可以去會員專區查看賣家的聯絡方式並連繫賣家商討
+                                        事後購書事宜細節。</p>
                                 </div>
-                                <div class='blog__item__text' align='right'>
+
+                                <div style="width:95%;
+                                        height:100px;  
+                                        background-color:#FCFCFC;
+                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
+
+                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                            font-size:23px; font-weight:bold;">如何賣書？</div>
+                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                            font-size:18px; font-weight:light;">在"首頁"可以看到"我要賣書，點此連結填寫上架表單"
+                                        ，點進去後依照指示填完表格並按"送出表單"即可成功上架書籍。這邊提醒您，上船二手書時請上
+                                        傳清晰的照片，切勿用網路圖片，並詳述書本的實際狀況。</p>
+
+                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                            font-size:18px; font-weight:light;">若有買家想購買您的書籍，您必須在"會員專區"按下"同意"向此買家透漏您的個人聯絡方式，買家
+                                        才能聯絡您並商討事後購書細節。
+                                    </p>
                                 </div>
-                            </div>
+                                <div style="width:95%;
+                                        height:100px;  
+                                        background-color:#FCFCFC;
+                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
+
+                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                            font-size:23px; font-weight:bold;">如果買家(或賣家)搞失蹤或放鳥我怎麼辦？</div>
+                                    <p style="margin-left: 10px; margin-bottom: 10px; 
+                                            font-size:18px; font-weight:light;">遇到這種情況麻煩幫我到"提問專區"填寫表單，詳細敘述發生經過，後續我們將會審核並給予不良的
+                                        買家或賣家貼上警告標籤，警告下一位與此使用者交易的人。
+
+                                    </p>
+                                </div>
+
                             </div>
                         
-
-                            <form action='bklink.php' method='post' role='form' >
-                            <input type=hidden name='dbaction' value='insert'>
-                            <input type=hidden name='BNumber' value='".$BNumber."'>
-                            
-
-                        <div class='authorBrand'>
-                            <h1 style='line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;'>".$row['BName']."<span style='color:#755e5f; font-weight: normal;font-size:20px;'></span></h1>
-                      <hr size='2px' align='top' width='100%'>
-                            <p style='margin:10px 0 0 0;'><span>賣家：<a href=review.php  style='color:orange;'>".$row['name']."</a>;</span></p>
-                      <p style='margin:10px 0 0 0;'><span>售價：".$row['price'].";</span></p>
-                      <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>
-
-                            <input type='submit' value='加入購物車'>
-                            
-                     </div>";
-                        }
-                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
-        <!-- Footer Section Begin -->
-        <footer class="footer spad">
+    <!-- Hero Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
