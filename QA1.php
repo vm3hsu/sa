@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>輔仁2手書平台</title>
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -21,10 +23,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style type="text/css">
-    #DIV_A {
-        box-shadow: 3px 3px 9px yellow;
-    }
-
     #login {
         position: absolute;
         width: auto;
@@ -45,41 +43,58 @@
         left: 5%;
     }
 </style>
+<style type="text/css">
+    #nav {
+        position: relative;
+        width: 20%;
+        height: auto;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        color: black
+    }
+
+    #top {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+
+    #mid {
+        position: relative;
+        width: auto;
+        height: 30%;
+        top: 13%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+
+    #bot {
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 26%;
+        right: 0;
+        bottom: auto;
+        left: 5%;
+        color: rgb(11, 0, 0)
+    }
+</style>
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li class="active"><a href="shop.php">瀏覽二手書</a></li>
-                <li><a href="request.php">索書專區</a></li>
-                <li><a href="common.php">常見問題</a></li>
-                <li><a href="QA.php">提問專區</a></li>
-                <?php
-                    session_start();
-                    if($_SESSION['name']=="")
-                    {
-                        echo"<li><a href='member2.php'>會員專區</a></li>";
-                    }
-                    else
-                    {
-                        echo"<li><a href='member.php'>會員專區</a></li>";
-                    }
-                ?>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-    </div>
-    <!-- Humberger End -->
+
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -126,10 +141,10 @@
                     <nav class="header__menu" id="menu">
                         <ul>
                             <li><a href="index.php">首頁</a></li>
-                            <li class="active"><a href="shop.php">瀏覽二手書</a></li>
+                            <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
-                            <li><a href="QA.php">提問專區</a></li>
+                            <li class="active"><a href="QA.php">提問專區</a></li>
                             <?php
                                 session_start();
                                 if($_SESSION['name']=="")
@@ -150,69 +165,64 @@
     <!-- Header Section End -->
 
 
-    <!-- Blog Section Begin -->
+    <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
-            <?php include "sidebar.php";?>
-                <div class="col-lg-8 col-md-8">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12 site_map" style="margin-bottom: 15px;">
-                <span>
-   
+                <?php include "sidebar.php";?>
+                <div class="col-lg-8 col-md-7">
+                    <form action="tblink.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <span style="font-family:DFKai-sb;">
+                                <div id="top">
+                                <div style="background-color:#FAFAFA">
+                                    
+                                        <h3><font size="5">&emsp;負評專區___待您送出後我們會將此評價顯示在對象的個人檔&emsp;<br>&emsp;案中</font>
+                                            <hr size="2px" align="top" width="100%">
+                                        </h3>
+                                        
+                                            &emsp;投訴對象名稱：<input type="text" name="target">                                        
+                                            <br><br>
+                                            <td>
+                                            &emsp;<span>是否被放鴿子：</span>
+                                            </td>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="radio" name="new" value="是">是
+                                                        </td>
+                                                        <td>
+                                                            <input type="radio" name="new" value="否">否
+                                                        </td>
+                                                    </tr><br><br>
+                                            &emsp;投訴原因(請詳細說明):<br>&emsp;<textarea name="content" rows="5" cols="60"></textarea>
+                                            <input type="submit" value="送出資料"><br>
+                                            <br>
+                                        </form>
+                                    
+                                </div>
+                                </div>
+                            </span>
                         </div>
-                        <?php
-                        $BNumber = $_GET['BNumber'];
-                        $link = mysqli_connect('localhost','root','12345678','sa');
-   
-                        $sql = "SELECT name ,BName ,price ,BCondition, category, college FROM book b, user u WHERE b.seller=u.account and BNumber=".$BNumber."";
-                    
-                        $result = mysqli_query($link,$sql);
-                        while ($row=mysqli_fetch_assoc($result)){
-                            echo"
-                            <a class='linkStyle01' href='index.php'>首頁</a>
-                </span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>瀏覽二手書</a></span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='shop.php'>類別：".$row['category']."</a></span>
-                <span class='span01'>&gt;</span><span class='span02'><a class='linkStyle01' href='index.php'>學院：".$row['college']."</a></span>
-                
-                            <hr size='2px' align='top' width=100%>
-                            <div class='col-lg-5 col-md-5 col-sm-5'>
-                            <div class='blog__item'>
-                                <div class='blog__item__pic'>
-                                    <img src='bookpicture/".$BNumber."/1.png' alt=''>
-                                </div>
-                                <div class='blog__item__text' align='right'>
-                                </div>
-                            </div>
-                            </div>
-                        
-
-                            <form action='bklink.php' method='post' role='form' >
-                            <input type=hidden name='dbaction' value='insert'>
-                            <input type=hidden name='BNumber' value='".$BNumber."'>
-                            
-
-                        <div class='authorBrand'>
-                            <h1 style='line-height: 24px;letter-spacing: 0.5px;font-size:20px;font-weight:bold; letter-spacing:1px;margin: 0;'>".$row['BName']."<span style='color:#755e5f; font-weight: normal;font-size:20px;'></span></h1>
-                      <hr size='2px' align='top' width='100%'>
-                            <p style='margin:10px 0 0 0;'><span>賣家：<a href=review.php?name=".$row['name']." style='color:orange;'>".$row['name']."</a>;</span></p>
-                      <p style='margin:10px 0 0 0;'><span>售價：".$row['price'].";</span></p>
-                      <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>
-
-                            <input type='submit' value='加入購物車'>
-                            
-                     </div>";
-                        }
-                        ?>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Hero Section End -->
+
+
+    <!-- Blog Section Begin -->
+    <section class="blog spad">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
     <!-- Blog Section End -->
-        <!-- Footer Section Begin -->
-        <footer class="footer spad">
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">

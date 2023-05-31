@@ -176,30 +176,13 @@
                             <span style="font-family:DFKai-sb;">
                                 <div id="top">
                                 <div style="background-color:#FAFAFA">
-                                    <h3><font size="5">&emsp;投訴專區___待您送出後我們會將會審核，並給予投訴&emsp;<br>&emsp;對象標示Warning Sign</font>
-                                        <hr size="2px" align="top" width="100%">
-                                    </h3>
-                                    <form>
-                                        &emsp;投訴對象名稱：<input type="text" name="UserName">
-                                        <br><br>
-                                        &emsp;投訴對象身分：
-                                        <input type="radio" name="UserType" walue="Type1">買家
-                                        <input type="radio" name="UserType" walue="Type1">賣家
-                                        <br><br>
-                                        &emsp;投訴原因(請詳細說明):<br>&emsp;<textarea name="comments" rows="5" cols="60"></textarea>
-                                        <input type="submit" value="送出資料">
-                                        <br>
-                                    </form>
-                                </div>
-                                </div>
-                                <div id="bot">
-                                <div style="background-color:#FAFAFA">
-                                    <h3><font size="5">&emsp;回饋專區___請告訴我們的工程師你對於此網站的改善<br>&emsp;與建議</font>
+                                    <h3><font size="5">&emsp;回饋專區___請告訴我們的工程師你對於此網站的改善&emsp;<br>&emsp;與建議</font>
                                         <hr size="2px" align="top" width="100%">
                                     </h3>
                                     <form>
                                         &emsp;歡迎你們提供對於這個平台更好的改善方式：<br>&emsp;<textarea name="comments" rows="8" cols="60"></textarea>
-                                        <input type="submit" value="送出資料">
+                                        <input type="submit" value="送出資料"><br>
+                                        <br>
                                     </form>
                                 </div>
                             </span>
