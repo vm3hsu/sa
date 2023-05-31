@@ -9,7 +9,7 @@ $link = mysqli_connect('localhost', 'root', '12345678', 'SA');
 $sql = "select * from user where name ='".$target."'";
 $result = mysqli_query($link, $sql);
 if($_SESSION['name']==$target){
-  header("location:message.php?message=無法投訴自己");
+  header("location:message.php?message=不要投訴自己啦");
 }
 elseif ($row = mysqli_fetch_assoc($result) ){
   $sql = "insert into rate (rateNumber, writer, target, content) values (Null, ".$_SESSION['name'].", '$target', '$content')";
