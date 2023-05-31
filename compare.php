@@ -137,26 +137,6 @@ table td{
                         <a href="index.php"><img src="img/logo.png"></a>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="header__cart">
-                        <table id="login">
-                            <?php
-                                session_start();
-                                if($_SESSION['name']=="")
-                                {
-                                    echo"<tr><td>[<a href='SAlogin.php'>登入</a>]</td><td>[<a href='register.php'>註冊</a>]</td></tr>";
-                                }
-                                else
-                                {
-                                    echo"<tr><td>".$_SESSION['name']."，你好</td><td>[<a href='logout.php'>登出</a>]</td></tr>";
-                                    echo"<tr><td colspan=2>
-                                    <div><a href='member.php'><svg xmlns='http://www.w3.org/2000/svg' width='25' height='30' fill='currentColor' class='bi bi-cart4' viewBox='0 0 16 16'><path d='M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/></svg><font style='font-size: x-large;vertical-align: top;'>購物車</font></a></div></td></tr>";
-                                }
-                            ?>
-                            
-                        </table>
-                    </div>
-                </div>
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
@@ -209,30 +189,73 @@ table td{
                         <table>
                             <h1><font size="6">&emsp;書籍比較</font></h1><br>
                             <tr>
-                                <th>書名</th>
-                                <td>Applied Calculus for the Managerial, Life, and Social Sciences: A Brief Approach 10/e</td>
-                                <td>Essential Calculus : Early Transcendentals 2/E</td>
-                                <td>Thomas' Calculus 14/E</td>
-                            </tr>
-                             <tr>
-                                <th>作者</th>
-                                <td>Soo T. Tan</td>
-                                <td>James Stewart </td>
-                                <td>HASS & THOMAS & WEIR</td>
+                                <th>書名</th>                     
+                            <?php
+                            $compare = $_POST['compare'];
+                            for ($i=0;$i<sizeof($compare); $i++){
+                            
+                                $link = mysqli_connect('localhost','root','12345678','sa');
+                                $sql = "SELECT BName from book where BNumber = $compare[$i]";
+                                $result = mysqli_query($link,$sql);
+                                while ($row=mysqli_fetch_assoc($result)){
+                                    echo"<td>".$row['BName']."</td>";
+                                
+                                }
+                            }
+                            
+                            ?>
                             </tr>
                             <tr>
-                                <th>價格</th>
-                                <td>NT$ 1,380</td>
-                                <td>NT$ 1,360</td>
-                                <td>NT$ 1,406</td>
+                                <th>賣家</th>                     
+                            <?php
+                            $compare = $_POST['compare'];
+                            for ($i=0;$i<sizeof($compare); $i++){
+                            
+                                $link = mysqli_connect('localhost','root','12345678','sa');
+                                $sql = "SELECT seller from book where BNumber = $compare[$i]";
+                                $result = mysqli_query($link,$sql);
+                                while ($row=mysqli_fetch_assoc($result)){
+                                    echo"<td>".$row['seller']."</td>";
+                                
+                                }
+                            }
+                            
+                            ?>
                             </tr>
                             <tr>
-                                <th>書況</th>
-                                <td>全新未拆封</td>
-                                <td>自然泛黃 缺頁</td>
-                                <td>髒汙 有皺褶</td>
+                                <th>價錢</th>                     
+                            <?php
+                            $compare = $_POST['compare'];
+                            for ($i=0;$i<sizeof($compare); $i++){
+                            
+                                $link = mysqli_connect('localhost','root','12345678','sa');
+                                $sql = "SELECT price from book where BNumber = $compare[$i]";
+                                $result = mysqli_query($link,$sql);
+                                while ($row=mysqli_fetch_assoc($result)){
+                                    echo"<td>".$row['price']."</td>";
+                                
+                                }
+                            }
+                            
+                            ?>
                             </tr>
-                           
+                            <tr>
+                                <th>書況</th>                     
+                            <?php
+                            $compare = $_POST['compare'];
+                            for ($i=0;$i<sizeof($compare); $i++){
+                            
+                                $link = mysqli_connect('localhost','root','12345678','sa');
+                                $sql = "SELECT BCondition from book where BNumber = $compare[$i]";
+                                $result = mysqli_query($link,$sql);
+                                while ($row=mysqli_fetch_assoc($result)){
+                                    echo"<td>".$row['BCondition']."</td>";
+                                
+                                }
+                            }
+                            
+                            ?>
+                            </tr>
                     </table>
                     <form action='member.php' method='post' role='form' >
                     <div align='right'>    

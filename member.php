@@ -177,19 +177,19 @@
                                 
 
                                 
-                                <form method="post" action="bookcontent.php">
-    
-    </form>
+                                <form action='compare.php' method='post'>
                                 <table class="table table-bordered border-warning table-hover">
                                     <thead style="background-color:#7fad39">
 
                                         <tr>
                                             <th colspan=4><font color="#ffffff">你的購物車</th>
+                                            <th><input type='submit' value='按此比較'></th>
                                             
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td></td>
                                             <td><b>書籍名稱</b></td>
                                             <td><b>價格</b></td>
                                             <td><b>賣家</b></td>
@@ -202,13 +202,13 @@
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
                             echo "                          
-                            <tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                            <tr><td><input type='checkbox' name='compare[]' value=".$row['BNumber']."></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
                             "</td><td><a href=transaction.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
                         }
                     ?>
                                     </tbody>
                                 </table>
-
+                    </form>
                                 <hr size="2px" align="top" width="100%">
                                 <table class="table table-bordered border-warning table-hover">
                                     <thead style="background-color:#7fad39">
@@ -241,6 +241,7 @@
                     ?>
                                     </tbody>
                                 </table>
+
                             </div>
                             <div id="mid">
                             <hr size="2px" align="top" width="100%">
