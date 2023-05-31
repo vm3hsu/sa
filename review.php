@@ -155,58 +155,37 @@
                 <?php include "sidebar.php";?>
                 <div class="col-lg-9">
                     <div style="background-color:#F5F5F5">
+                        <?php
+                            $name = $_GET['name'];
+                            $link = mysqli_connect('localhost','root','12345678','sa');
+    
+                            $sql = "SELECT writer, target, content FROM rate WHERE target='".$name."'";
                         
+                            $result = mysqli_query($link,$sql);
+                            echo"
                             <div class='hero__text'>
-                                <span>
-                                    <font size='6'>(使用者)的評價<i class="fa fa-comments"></i></font>
-                                </span>
-                                <p>User's Reviews</p>
+                                    <span>
+                                        <font size='6'>".$name."的評價<i class='fa fa-comments'></i></font>
+                                    </span>
+                                    <p>User's Reviews</p>";
+                            while ($row=mysqli_fetch_assoc($result)){
+                                echo"
+                                
 
-                                <div style='width:95%;
-                                        height:100px;  
-                                        background-color:#FCFCFC;
-                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;'>
+                                    <div style='width:95%;
+                                            height:100px;  
+                                            background-color:#FCFCFC;
+                                            border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;'>
 
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                            font-size:23px; font-weight:bold;">如何買書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                            font-size:18px; font-weight:light;">在"瀏覽二手書"中找到你想要的書並按下確認購買，
-                                        然後等待賣家同意給你他的連絡資訊後，便可以去會員專區查看賣家的聯絡方式並連繫賣家商討
-                                        事後購書事宜細節。</p>
-                                </div>
-
-                                <div style="width:95%;
-                                        height:100px;  
-                                        background-color:#FCFCFC;
-                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
-
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                            font-size:23px; font-weight:bold;">如何賣書？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                            font-size:18px; font-weight:light;">在"首頁"可以看到"我要賣書，點此連結填寫上架表單"
-                                        ，點進去後依照指示填完表格並按"送出表單"即可成功上架書籍。這邊提醒您，上船二手書時請上
-                                        傳清晰的照片，切勿用網路圖片，並詳述書本的實際狀況。</p>
-
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                            font-size:18px; font-weight:light;">若有買家想購買您的書籍，您必須在"會員專區"按下"同意"向此買家透漏您的個人聯絡方式，買家
-                                        才能聯絡您並商討事後購書細節。
-                                    </p>
-                                </div>
-                                <div style="width:95%;
-                                        height:100px;  
-                                        background-color:#FCFCFC;
-                                        border-radius:15px;border:2px gray solid;margin: auto;margin-bottom: 20px; padding: 10px;height: auto;">
-
-                                    <div style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
-                                            font-size:23px; font-weight:bold;">如果買家(或賣家)搞失蹤或放鳥我怎麼辦？</div>
-                                    <p style="margin-left: 10px; margin-bottom: 10px; 
-                                            font-size:18px; font-weight:light;">遇到這種情況麻煩幫我到"提問專區"填寫表單，詳細敘述發生經過，後續我們將會審核並給予不良的
-                                        買家或賣家貼上警告標籤，警告下一位與此使用者交易的人。
-
-                                    </p>
-                                </div>
-
-                            </div>
+                                        <div style='margin-left: 10px; margin-top: 10px; margin-bottom: 10px; 
+                                                font-size:16px; font-weight:light;'>".$row['writer'].":</div>
+                                        <p style='margin-left: 10px; margin-bottom: 10px; 
+                                                font-size:20px;'>".$row['content']."</p>
+                                    </div>
+                                ";
+                            }
+                            echo "</div>"?>
+                        
                         
                     </div>
                 </div>
