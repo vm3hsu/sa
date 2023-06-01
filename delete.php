@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php
+    session_start();
 $SNumber=$_GET['SNumber'];
 $date = "2023-05-11";
 $BNumber = $_GET['BNumber'];
@@ -17,9 +18,26 @@ $link = mysqli_connect('localhost','root','12345678','sa');
 $dbaction = $_GET['dbaction'];
 
 if ($dbaction=="buy"){
+    $seller = $_GET['seller'];
+    $SNumber = $_GET['SNumber'];
+    $BNumber = $_GET['BNumber'];
+    $date1 = $_GET['selectedDates1'];
+    $time1 = $_GET['time1'];
+    $location1 = implode(",",$_GET['location1']);
+    $date2 = $_GET['selectedDates2'];
+    $time2 = $_GET['time2'];
+    $location2 = implode(",",$_GET['location2']);
+    $date3 = $_GET['selectedDates3'];
+    $time3 = $_GET['time3'];
+    $location3 = implode(",",$_GET['location3']);
+    $date4 = $_GET['selectedDates4'];
+    $time4 = $_GET['time4'];
+    $location4 = implode(",",$_GET['location4']);
+    $today = date('Y/m/d');
     $sql = "delete from shoppingcart where SNumber ='$SNumber'";
     mysqli_query($link,$sql);
-    $sql = "insert into record (SNumber, BNumber, date, buyer, seller) values (NULL, '$BNumber', '$date', '$buyer', '$seller')";
+    $sql = "insert into record (SNumber, BNumber, date, buyer, seller, reason, date1, time1, location1, date2, time2, location2, date3, time3, location3, date4, time4, location4) values (NULL, '$BNumber', '$today', '$buyer', '$seller', '$reason', '$date1', '$time1', '$location1', '$date2', '$time2', '$location2', '$date3', '$time3', '$location3', '$date4', '$time4', '$location4')";
+    echo $sql;
     if(mysqli_query($link,$sql)){
         $sql = "UPDATE book SET selled = 1 WHERE BNumber = '$BNumber'";
         mysqli_query($link,$sql);

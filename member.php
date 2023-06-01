@@ -282,11 +282,12 @@
                                     <thead style="background-color:#7fad39">
 
                                         <tr>
-                                            <th colspan=3><font color="#ffffff">是否同意取消訂單</th>
+                                            <th colspan=4><font color="#ffffff">是否同意買家取消訂單</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td><b>買家</b></td>
                                             <td><b>書籍名稱</b></td>
                                             <td><b>取消原因</b></td>
                                             <td><b>是否同意</b></td>
@@ -305,8 +306,23 @@
                         }
                     ?>
 
+                                    </tbody>
+                                </table> 
+                                <table class="table table-bordered border-warning table-hover">
+                                    <thead style="background-color:#7fad39">
+
+                                        <tr>
+                                            <th colspan=3><font color="#ffffff">是否同意售出給此買家</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><b>買家</b></td>
+                                            <td><b>書籍名稱</b></td>
+                                            <td><b>是否同意</b></td>
+                                        </tr>   
                                         </tbody>
-                                </table>    
+                                </table> 
                             </div>
                         </span>
                     </div>

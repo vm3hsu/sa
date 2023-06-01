@@ -160,6 +160,9 @@
                     <div style="background-color:#FAFAFA">
                         <form action="delete.php" method="get" enctype="multipart/form-data">
                             <input type=hidden name="dbaction" value="buy">
+                            <input type=hidden name="SNumber" value="<?php echo $_GET['SNumber']?>">
+                            <input type=hidden name="seller" value="<?php echo $_GET['seller']?>">
+                            <input type=hidden name="BNumber" value="<?php echo $_GET['BNumber']?>">
                             <h1><font size="6">&emsp;買賣家交易時間地點表單</font></h1><br>
                             <table width=100% >
                                 <tbody width=100%>
@@ -168,7 +171,7 @@
                                             &emsp;<span>日期1：</span>
                                         </td>
                                         <td width=45%>
-                                            <input type="date" name="selectedDates" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
+                                            <input type="date" name="selectedDates1" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
                                         </td>
                                     </tr>
                                     <tr>
@@ -176,7 +179,7 @@
                                             &emsp;<span>時間：</span>
                                         </td>
                                         <td>
-                                            <select name="category">
+                                            <select name="time1">
                                                 <option value="8:30~8:40">08:30~08:40</option>
                                                 <option value="9:30~9:40">09:30~09:40</option>
                                                 <option value="10:30~10:40">10:30~10:40</option>
@@ -204,52 +207,52 @@
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="new" value="文園木椅" checked>文園木椅
+                                                        <input type="checkbox" name="location1[]" value="文園木椅" checked>文園木椅
                                         
                                                     </td>
 
                                                     <td>
-                                                        <input type="checkbox" name="new" value="風華廣場">風華廣場
+                                                        <input type="checkbox" name="location1[]" value="風華廣場">風華廣場
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="進修711" checked>進修711
+                                                        <input type="checkbox" name="location1[]" value="進修711" checked>進修711
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="側門711">側門711
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="淨心堂" checked>淨心堂
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="食科冰前面">食科冰前面
+                                                        <input type="checkbox" name="location1[]" value="側門711">側門711
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="國璽樓沙發區" checked>國璽樓沙發區</label>
+                                                        <input type="checkbox" name="location1[]" value="淨心堂" checked>淨心堂
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="真善美聖">真善美聖</label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="野聲樓前面空地" checked>野聲樓前面空地</label>
-                                                    </td>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="積健樓">積健樓</label>
+                                                        <input type="checkbox" name="location1[]" value="食科冰前面">食科冰前面
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="中美堂正門" checked>中美堂正門</label>
+                                                        <label><input type="checkbox" name="location1[]" value="國璽樓沙發區" checked>國璽樓沙發區</label>
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="法籃籃球場">法籃籃球場</label>
+                                                        <label><input type="checkbox" name="location1[]" value="真善美聖">真善美聖</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location1[]" value="野聲樓前面空地" checked>野聲樓前面空地</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location1[]" value="積健樓">積健樓</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location1[]" value="中美堂正門" checked>中美堂正門</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location1[]" value="法籃籃球場">法籃籃球場</label>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -267,7 +270,7 @@
                                             &emsp;<span>日期2：</span>
                                         </td>
                                         <td width=45%>
-                                            <input type="date" name="selectedDates" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
+                                            <input type="date" name="selectedDates2" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
                                         </td>
                                     </tr>
                                     <tr>
@@ -275,7 +278,7 @@
                                             &emsp;<span>時間：</span>
                                         </td>
                                         <td>
-                                            <select name="category">
+                                            <select name="time2">
                                                 <option value="8:30~8:40">08:30~08:40</option>
                                                 <option value="9:30~9:40">09:30~09:40</option>
                                                 <option value="10:30~10:40">10:30~10:40</option>
@@ -303,52 +306,52 @@
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="new" value="文園木椅" checked>文園木椅
+                                                        <input type="checkbox" name="location2[]" value="文園木椅" checked>文園木椅
                                         
                                                     </td>
 
                                                     <td>
-                                                        <input type="checkbox" name="new" value="風華廣場">風華廣場
+                                                        <input type="checkbox" name="location2[]" value="風華廣場">風華廣場
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="進修711" checked>進修711
+                                                        <input type="checkbox" name="location2[]" value="進修711" checked>進修711
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="側門711">側門711
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="淨心堂" checked>淨心堂
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="食科冰前面">食科冰前面
+                                                        <input type="checkbox" name="location2[]" value="側門711">側門711
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="國璽樓沙發區" checked>國璽樓沙發區</label>
+                                                        <input type="checkbox" name="location2[]" value="淨心堂" checked>淨心堂
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="真善美聖">真善美聖</label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="野聲樓前面空地" checked>野聲樓前面空地</label>
-                                                    </td>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="積健樓">積健樓</label>
+                                                        <input type="checkbox" name="location2[]" value="食科冰前面">食科冰前面
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="中美堂正門" checked>中美堂正門</label>
+                                                        <label><input type="checkbox" name="location2[]" value="國璽樓沙發區" checked>國璽樓沙發區</label>
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="法籃籃球場">法籃籃球場</label>
+                                                        <label><input type="checkbox" name="location2[]" value="真善美聖">真善美聖</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location2[]" value="野聲樓前面空地" checked>野聲樓前面空地</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location2[]" value="積健樓">積健樓</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location2[]" value="中美堂正門" checked>中美堂正門</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location2[]" value="法籃籃球場">法籃籃球場</label>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -367,7 +370,7 @@
                                             &emsp;<span>日期3：</span>
                                         </td>
                                         <td width=45%>
-                                            <input type="date" name="selectedDates" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
+                                            <input type="date" name="selectedDates3" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
                                         </td>
                                     </tr>
                                     <tr>
@@ -375,7 +378,7 @@
                                             &emsp;<span>時間：</span>
                                         </td>
                                         <td>
-                                            <select name="category">
+                                            <select name="time3">
                                                 <option value="8:30~8:40">08:30~08:40</option>
                                                 <option value="9:30~9:40">09:30~09:40</option>
                                                 <option value="10:30~10:40">10:30~10:40</option>
@@ -403,52 +406,52 @@
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="new" value="文園木椅" checked>文園木椅
+                                                        <input type="checkbox" name="location3[]" value="文園木椅" checked>文園木椅
                                         
                                                     </td>
 
                                                     <td>
-                                                        <input type="checkbox" name="new" value="風華廣場">風華廣場
+                                                        <input type="checkbox" name="location3[]" value="風華廣場">風華廣場
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="進修711" checked>進修711
+                                                        <input type="checkbox" name="location3[]" value="進修711" checked>進修711
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="側門711">側門711
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="淨心堂" checked>淨心堂
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="食科冰前面">食科冰前面
+                                                        <input type="checkbox" name="location3[]" value="側門711">側門711
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="國璽樓沙發區" checked>國璽樓沙發區</label>
+                                                        <input type="checkbox" name="location3[]" value="淨心堂" checked>淨心堂
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="真善美聖">真善美聖</label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="野聲樓前面空地" checked>野聲樓前面空地</label>
-                                                    </td>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="積健樓">積健樓</label>
+                                                        <input type="checkbox" name="location3[]" value="食科冰前面">食科冰前面
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="中美堂正門" checked>中美堂正門</label>
+                                                        <label><input type="checkbox" name="location3[]" value="國璽樓沙發區" checked>國璽樓沙發區</label>
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="法籃籃球場">法籃籃球場</label>
+                                                        <label><input type="checkbox" name="location3[]" value="真善美聖">真善美聖</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location3[]" value="野聲樓前面空地" checked>野聲樓前面空地</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location3[]" value="積健樓">積健樓</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location3[]" value="中美堂正門" checked>中美堂正門</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location3[]" value="法籃籃球場">法籃籃球場</label>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -467,7 +470,7 @@
                                             &emsp;<span>日期4：</span>
                                         </td>
                                         <td width=45%>
-                                            <input type="date" name="selectedDates" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
+                                            <input type="date" name="selectedDates4" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" multiple required> "只能選擇未來一周內的日期，所以務必在期間內完成交易"
                                         </td>
                                     </tr>
                                     <tr>
@@ -475,7 +478,7 @@
                                             &emsp;<span>時間：</span>
                                         </td>
                                         <td>
-                                            <select name="category">
+                                            <select name="time4">
                                                 <option value="8:30~8:40">08:30~08:40</option>
                                                 <option value="9:30~9:40">09:30~09:40</option>
                                                 <option value="10:30~10:40">10:30~10:40</option>
@@ -503,52 +506,52 @@
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="new" value="文園木椅" checked>文園木椅
+                                                        <input type="checkbox" name="location4[]" value="文園木椅" checked>文園木椅
                                         
                                                     </td>
 
                                                     <td>
-                                                        <input type="checkbox" name="new" value="風華廣場">風華廣場
+                                                        <input type="checkbox" name="location4[]" value="風華廣場">風華廣場
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="進修711" checked>進修711
+                                                        <input type="checkbox" name="location4[]" value="進修711" checked>進修711
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="yellowing" value="側門711">側門711
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="淨心堂" checked>淨心堂
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" name="dirty" value="食科冰前面">食科冰前面
+                                                        <input type="checkbox" name="location4[]" value="側門711">側門711
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="國璽樓沙發區" checked>國璽樓沙發區</label>
+                                                        <input type="checkbox" name="location4[]" value="淨心堂" checked>淨心堂
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="wrinkle" value="真善美聖">真善美聖</label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="野聲樓前面空地" checked>野聲樓前面空地</label>
-                                                    </td>
-                                                    <td>
-                                                        <label><input type="checkbox" name="lack" value="積健樓">積健樓</label>
+                                                        <input type="checkbox" name="location4[]" value="食科冰前面">食科冰前面
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="中美堂正門" checked>中美堂正門</label>
+                                                        <label><input type="checkbox" name="location4[]" value="國璽樓沙發區" checked>國璽樓沙發區</label>
                                                     </td>
                                                     <td>
-                                                        <label><input type="checkbox" name="note" value="法籃籃球場">法籃籃球場</label>
+                                                        <label><input type="checkbox" name="location4[]" value="真善美聖">真善美聖</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location4[]" value="野聲樓前面空地" checked>野聲樓前面空地</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location4[]" value="積健樓">積健樓</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location4[]" value="中美堂正門" checked>中美堂正門</label>
+                                                    </td>
+                                                    <td>
+                                                        <label><input type="checkbox" name="location4[]" value="法籃籃球場">法籃籃球場</label>
                                                     </td>
                                                 </tr>
                                             </table>
