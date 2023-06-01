@@ -22,7 +22,9 @@ session_start();
     
 if($dbaction=="insert"){
     $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
-    if(mysqli_query($link,$sql)){
+    if($_SESSION['acount']==$buyer){
+    }
+    elseif(mysqli_query($link,$sql)){
         header("location:message.php?message=已加入購物車");
     }    
     else{

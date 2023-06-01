@@ -201,9 +201,11 @@
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
-                            echo "                          
-                            <tr><td><input type='checkbox' name='compare[]' value=".$row['BNumber']."></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=transaction.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
+                            if($_SESSION['name']<>$row['name']){
+                                echo "                          
+                                <tr><td><input type='checkbox' name='compare[]' value=".$row['BNumber']."></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                                "</td><td><a href=transaction.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
+                            }
                         }
                     ?>
                                     </tbody>
@@ -235,8 +237,11 @@
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                            "</td><td><a href=reason.php?BNumber=", $row['BNumber'], ">[取消]</a></td></tr>";
+                            if($_SESSION['name']<>$row['name']){
+                                echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
+                                "</td><td><a href=reason.php?BNumber=", $row['BNumber'], ">[取消]</a></td></tr>";
+                            }
+                            
                         }
                     ?>
                                     </tbody>
