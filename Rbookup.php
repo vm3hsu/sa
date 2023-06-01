@@ -172,11 +172,13 @@
                         <input type=hidden name="dbaction" value="insert">
                         <input type=hidden name="BName" value="<?php echo $RName; ?>">
                         <input type=hidden name="category" value="<?php echo $category; ?>">
+                        <input type=hidden name="sendmail" value=1>
+                        <input type=hidden name="SNumber" value="<?php echo $RNumber; ?>">
                         <h1><font size="6">&emsp;賣家上架書籍表單</font></h1><br>
                         <table width=100%>
                             <tbody width=100%>
                                 <tr>
-                                    <td width=50% rowspan="5"><input type="file" name="file" accept=".jpg,.jpeg,.png"></td>
+                                    <td width=50% rowspan="5"><input type="file" name="file[]" accept=".jpg,.jpeg,.png"></td>
                                     <td width=5%>
                                         <span>書名：</span>
                                     </td>

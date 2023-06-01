@@ -41,7 +41,61 @@ if ($dbaction=="buy"){
     if(mysqli_query($link,$sql)){
         $sql = "UPDATE book SET selled = 1 WHERE BNumber = '$BNumber'";
         mysqli_query($link,$sql);
-        header("location:message.php?message=購買成功");
+        include "mail.php";
+        try{
+            
+            $buyerAcc = $_SESSION['account'];
+            $buyerName = $_SESSION['name']; 
+            $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+            $sql = "select * from user where account = '$buyerAcc'";
+
+            $result = mysqli_query($link, $sql);
+            $row = mysqli_fetch_assoc($result); 
+            $buyermail = $row['email'];
+
+            $mail->addAddress($buyermail,$buyerName);
+
+            //Set the subject line
+            $mail->Subject = '恭喜您已完成訂單!!!!';
+
+            $sql = "select * from book where BNumber = '$BNumber'";
+
+            $result = mysqli_query($link, $sql);
+            $row = mysqli_fetch_assoc($result); 
+            $mail->Body = '您的訂單編號：'.$SNumber." 書籍名稱：".$row['BName']." 價格：".$row['price']."，正在等待賣家確認訂單";
+            $mail->send();
+        
+            $mail1->CharSet = "utf-8";
+            $mail1->isSMTP();
+            $mail1->isHTML(true);
+            $mail1->SMTPDebug = 0;
+            $mail1->Host = 'smtp.gmail.com';
+            $mail1->Port = 465;
+            $mail1->SMTPSecure = 'ssl';
+            $mail1->SMTPAuth = true;
+            $mail1->Username = "sa7thtest@gmail.com";
+            $mail1->Password = "lkwvzaozsgikptnq";
+            $mail1->setFrom('sa7thtest@gmail.com', '輔大2手書交易平台');
+            $mail1->addReplyTo('sa7thtest@gmail.com', '輔大2手書交易平台');
+            $mail1->Subject = '您在輔大2手書交易平台收到一筆訂單!!!!';
+            $mail1->Body = '訂單編號：'.$SNumber." 書籍名稱：".$row['BName']." 價格：".$row['price']."，買家正在等待您確認訂單";
+
+            $sql = "select * from user where account = '$seller'";
+
+            $result = mysqli_query($link, $sql);
+            $row = mysqli_fetch_assoc($result); 
+            $sellermail = $row['email'];
+            $sellerName = $row['name'];
+
+            $mail1->addAddress($sellermail,$sellerName);
+            $mail1->send();
+            
+            header("location:message.php?message=購買成功");
+        }
+        catch(Exception $e){
+            echo "Mailer Error: " . $mail1->ErrorInfo;
+        }
+        
     }
     else{
         header("location:message.php?message=購買失敗");

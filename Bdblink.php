@@ -22,6 +22,7 @@
     $seller = $_SESSION['account'];
     $image_new_name = "1";
     $image_upload_path = "bookpicture/";
+    $SNumber = $_POST['SNumber'];
     
     $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
     if ($dbaction == "insert") {
@@ -50,8 +51,36 @@
             catch(Exception $e){}
             
             
-            $sql = "UPDATE request SET requested = 1 WHERE RName = '$BName' and category = '$category'";
+            $sql = "UPDATE request SET requested = 1 WHERE RNumber = '$RNumber'";
             mysqli_query($link, $sql);
+
+            if($_POST['sendmail']==1){
+                try{
+                    include "mail.php";
+                    $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+                    $sql = "select * from request r ,user u where r.requester = u.account";
+                    $result = mysqli_query($link, $sql);
+                    $row = mysqli_fetch_assoc($result);
+    
+                        $requestermail = $row['email'];
+                        $requesterName = $row['name'];
+                        $mail->addAddress($requestermail,$requesterName);
+                
+                        //Set the subject line
+                        $mail->Subject = '您在輔大2手書交易平台的索書需求得到了回應!!!!';
+                
+                        $sql = "select * from book where BNumber = '$BNumber'";
+                
+                        $mail->Body = '您曾經在輔大2手書交易平台提出索要'.$RName.'的需求，現在已經有賣家上架了，快去看看吧';
+                        $mail->send();
+            
+                    
+                    }
+                    catch(Exception $e){
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    }
+            }
+
             header("location:message.php?message=新增成功");
         } else {
             //echo "新增失敗";

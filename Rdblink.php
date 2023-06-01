@@ -43,8 +43,34 @@
             }
             $is_upload = move_uploaded_file($_FILES["file"]["tmp_name"],"requestbookpicture/".$RNumber."/".$_FILES["file"]['name']);
             rename("requestbookpicture/".$RNumber."/".$_FILES["file"]['name'],"requestbookpicture/".$RNumber.'/1.png');
+            try{
+                include "mail.php";
+                $buyerAcc = $_SESSION['account'];
+                $buyerName = $_SESSION['name']; 
+                $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+                $sql = "select * from record r ,user u,book b where b.BName = '".$RName."' and r.buyer = u.account";
+                $result = mysqli_query($link, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+
+                    $sellermail = $row['email'];
+                    $sellerName = $row['name'];
+                    $mail->addAddress($sellermail,$sellerName);
             
-            header("location:message.php?message=新增成功");
+                    //Set the subject line
+                    $mail->Subject = '輔大2手書交易平台有一筆新的索書需求!!!!';
+            
+                    $sql = "select * from book where BNumber = '$BNumber'";
+            
+                    $mail->Body = '您曾經在輔大2手書交易平台買過'.$RName.'，您現在還有需要這本書嗎，不妨交給下一個有緣人';
+                    $mail->send();
+        
+                } 
+                
+                }
+                catch(Exception $e){
+                    echo "Mailer Error: " . $mail->ErrorInfo;
+                }
+                header("location:message.php?message=新增成功");
         } else {
             //echo "新增失敗";
             header("location:message.php?message=新增失敗");
