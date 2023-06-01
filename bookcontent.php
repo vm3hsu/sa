@@ -180,7 +180,7 @@
                             <div class='col-lg-5 col-md-5 col-sm-5'>
                             <div class='blog__item'>
                                 <div class='blog__item__pic'>
-                                    <img src='bookpicture/".$BNumber."/1.png' alt=''>
+                                    <img src='bookpicture/".$BNumber."/0.png' alt=''>
                                 </div>
                                 <div class='blog__item__text' align='right'>
                                 </div>
