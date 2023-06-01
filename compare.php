@@ -212,10 +212,10 @@ table td{
                             for ($i=0;$i<sizeof($compare); $i++){
                             
                                 $link = mysqli_connect('localhost','root','12345678','sa');
-                                $sql = "SELECT seller from book where BNumber = $compare[$i]";
+                                $sql = "SELECT name from book b, user u where b.seller=u.account and BNumber = $compare[$i]";
                                 $result = mysqli_query($link,$sql);
                                 while ($row=mysqli_fetch_assoc($result)){
-                                    echo"<td>".$row['seller']."</td>";
+                                    echo"<td>".$row['name']."</td>";
                                 
                                 }
                             }
