@@ -185,6 +185,12 @@
                                 ";
                             }
                             echo "</div>"?>
+                            <form  method='post' role='form' >
+                                <div align='right'>    
+                                    <input type='submit' formaction='member.php' value='回會員專區'>
+                                    <input type='submit' formaction='shop.php' value='回瀏覽二手書'>
+                                </div>
+                            </form>
                         
                         
                     </div>

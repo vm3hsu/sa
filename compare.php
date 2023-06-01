@@ -215,7 +215,7 @@ table td{
                                 $sql = "SELECT name from book b, user u where b.seller=u.account and BNumber = $compare[$i]";
                                 $result = mysqli_query($link,$sql);
                                 while ($row=mysqli_fetch_assoc($result)){
-                                    echo"<td>".$row['name']."</td>";
+                                    echo"<td><a href=review.php?name=".$row['name']." style='color:orange;'>".$row['name']."</a></td>";
                                 
                                 }
                             }
@@ -259,10 +259,10 @@ table td{
                     </table>
                     <form action='member.php' method='post' role='form' >
                     <div align='right'>    
-                    <input type='submit' value='回上頁'>
+                    <input type='submit' value='回會員專區'>
                     </div>
                     </form>
-                        </div>
+                </div>
 
                     
 
