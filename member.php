@@ -303,11 +303,11 @@
                         
                         $link = mysqli_connect('localhost','root','12345678','sa');
    
-                        $sql = "SELECT BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
+                        $sql = "SELECT buyer, BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
                     
                         $result = mysqli_query($link,$sql);
                         while ($row=mysqli_fetch_assoc($result)){
-                            echo "<tr><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
+                            echo "<tr><td>", $row['buyer'], "</td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
                         }
                     ?>
 
