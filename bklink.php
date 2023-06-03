@@ -23,6 +23,11 @@ session_start();
 if($dbaction=="insert"){
     $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
     if($_SESSION['acount']==$buyer){
+        ?>
+              <script>
+              alert("無法加入自己賣的書");
+                location.href="shop.php";
+                </script><?php
     }
     elseif(mysqli_query($link,$sql)){
         header("location:message.php?message=已加入購物車");
