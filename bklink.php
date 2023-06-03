@@ -10,10 +10,10 @@
 <body>
 <?php
 session_start();
- $BNumber = $_POST['BNumber'];
- $BName = $_POST['BName'];
- $seller = $_POST['seller'];
- $buyer = $_SESSION['account'];
+    $BNumber = $_POST['BNumber'];
+    $BName = $_POST['BName'];
+    $seller = $_POST['seller'];
+    $buyer = $_SESSION['account'];
     $dbaction = $_POST['dbaction'];
     $name = $_POST['name'];
     $price = $_POST['price'];
@@ -21,15 +21,21 @@ session_start();
     $link = mysqli_connect('localhost','root','12345678','sa');
     
 if($dbaction=="insert"){
-    $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
-    if($_SESSION['acount']==$buyer){
+    $sql = "select seller from book where BNumber =".$BNumber."";
+    mysqli_query($link,$sql);
+    $result = mysqli_query($link, $sql);
+    if ($row = mysqli_fetch_assoc($result)) {
+        $seller = $row['seller'];
+    }
+    if($seller==$buyer){
         ?>
-              <script>
-              alert("無法加入自己賣的書");
+            <script>
+            alert("無法加入自己賣的書");
                 location.href="shop.php";
                 </script><?php
     }
-    elseif(mysqli_query($link,$sql)){
+    elseif($seller<>$buyer){
+        $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
         header("location:message.php?message=已加入購物車");
     }    
     else{
@@ -39,17 +45,6 @@ if($dbaction=="insert"){
    
     
 }
-elseif($dbaction=="update"){
-    $sql = "update sign set SName='$SName', email='$email', camp='$camp', uniform='$uniform', dance='$dance' where SID='$SID'";
-    if(mysqli_query($link,$sql)){
-        //echo "修改成功";
-        header("location:message3.php?message=修改成功");
-    }    
-    else{
-        //echo "修改失敗";
-        header("location:message3.php?message=修改失敗");
-    }
-}    
     
 ?>
 </body>
