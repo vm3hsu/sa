@@ -36,6 +36,7 @@ if($dbaction=="insert"){
     }
     elseif($seller<>$buyer){
         $sql = "insert into shoppingcart (SNumber, BNumber, buyer) values ('$SNumber', '$BNumber', '$buyer')";
+        mysqli_query($link, $sql);
         header("location:message.php?message=已加入購物車");
     }    
     else{
