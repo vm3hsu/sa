@@ -144,7 +144,17 @@
                             <li><a href="shop.php">瀏覽二手書</a></li>
                             <li><a href="request.php">索書專區</a></li>
                             <li><a href="common.php">常見問題</a></li>
-                            <li class="active"><a href="QA.php">提問專區</a></li>
+                            <?php
+                                session_start();
+                                if($_SESSION['name']=="")
+                                {
+                                    echo"<li><a href='member2.php?show_alert=true'>提問專區</a></li>";
+                                }
+                                else
+                                {
+                                    echo"<li class=active ><a href='QA.php'>提問專區</a></li>";
+                                }
+                            ?>
                             <?php
                                 session_start();
                                 if($_SESSION['name']=="")

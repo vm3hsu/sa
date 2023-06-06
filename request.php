@@ -135,7 +135,7 @@
                                 }
                                 else
                                 {
-                                    echo"<li class='active'><a href='QA.php'>提問專區</a></li>";
+                                    echo"<li><a href='QA.php'>提問專區</a></li>";
                                 }
                             ?>
                             <?php
