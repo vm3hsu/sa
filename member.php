@@ -305,7 +305,7 @@
 
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
                                         session_start();
-                                        $sql = "SELECT buyer, BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason not like '' AND b.seller = " . $_SESSION['account'] . " AND u.account = " . $_SESSION['account'] . "";
+                                        $sql = "SELECT buyer, BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason not like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . "";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
