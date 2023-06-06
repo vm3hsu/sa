@@ -155,6 +155,7 @@
                     <div class="row">
                         <span style="font-family:DFKai-sb;width:77%">
                             <div id="top">
+
                                 <h3>
                                     <?php
                                     session_start();
@@ -166,182 +167,134 @@
                                     ?>
                                     <hr size="2px" align="top" width="100%">
                                 </h3>
-                                <h3>我是買家
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-
-
-
-                                <form action='compare.php' method='post'>
-                                    <table class="table table-bordered border-warning table-hover">
-                                        <thead style="background-color:#7fad39">
-
-                                            <tr>
-                                                <th colspan=4>
-                                                    <font color="#ffffff">你的購物車
-                                                </th>
-                                                <th><input type='submit' value='按此比較'></th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td><b>書籍名稱</b></td>
-                                                <td><b>價格</b></td>
-                                                <td><b>賣家</b></td>
-                                                <td><b>功能</b></td>
-                                            </tr>
-                                            <?php
-                                            $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-                                            $sql = "SELECT SNumber, BName, price, name, seller , b.BNumber from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
-
-                                            $result = mysqli_query($link, $sql);
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                if ($_SESSION['name'] <> $row['name']) {
-                                                    echo "                          
-                                <tr><td><input type='checkbox' name='compare[]' value=" . $row['BNumber'] . "></td><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                                                    "</td><td><a href=transaction.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=buy>[購買]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[刪除]</a></td></tr>";
-                                                }
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </form>
-                                <hr size="2px" align="top" width="100%">
+                                <form action="agreedblink.php" method="post" enctype="multipart/form-data">
                                 <table class="table table-bordered border-warning table-hover">
                                     <thead style="background-color:#7fad39">
+
                                         <tr>
                                             <th colspan=4>
-                                                <font color="#ffffff">你的訂單
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>書籍名稱</b></td>
-                                            <td><b>價格</b></td>
-                                            <td><b>賣家</b></td>
-
-                                        </tr>
-
-
-                                        <?php
-
-
-                                        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-
-                                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account";
-
-                                        $result = mysqli_query($link, $sql);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            if ($_SESSION['name'] <> $row['name']) {
-                                                echo "<tr><td>", $row['BName'], "</td><td>", $row['price'], "</td><td>", $row['name'],
-                                                "</td><td><a href=reason.php?BNumber=", $row['BNumber'], ">[取消]</a></td></tr>";
-                                            }
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                            <div id="mid">
-                                <hr size="2px" align="top" width="100%">
-                                <h3>我是賣家<br>
-                                    <hr size="2px" align="top" width="100%">
-                                </h3>
-
-
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=2>
-                                                <font color="#ffffff">已上架書籍
+                                                <font color="#ffffff">交易確認
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><b>書籍名稱</b></td>
                                             <td></td>
+                                            <td><b>日期</b></td>
+                                            <td><b>時間</b></td>
+                                            <td><b>地點</b></td>
                                         </tr>
-
                                         <?php
-                                        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-                                        $sql = "SELECT * from book where seller = " . $_SESSION['account'];
-
-                                        $result = mysqli_query($link, $sql);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "                          
-                            <tr><td>", $row['BName'], "</td>
-                            <td><a href=delete.php?BNumber=", $row['BNumber'], "&dbaction=remove>[下架此書]</a></td></tr>";
-                                        }
-                                        ?>
-
-                                    </tbody>
-                                </table>
-
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=4>
-                                                <font color="#ffffff">是否同意買家取消訂單
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>買家</b></td>
-                                            <td><b>書籍名稱</b></td>
-                                            <td><b>取消原因</b></td>
-                                            <td><b>是否同意</b></td>
-                                        </tr>
-
-                                        <?php
-
-
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
                                         session_start();
-                                        $sql = "SELECT buyer, BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason not like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . "";
-
+                                        $SNumber = $_GET['SNumber'];
+                                        $sql = "SELECT * FROM record WHERE SNumber = $SNumber";
                                         $result = mysqli_query($link, $sql);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
-                                        }
+                                        $row = mysqli_fetch_assoc($result);
                                         ?>
+                                        <input type=hidden name="SNumber" value="<?php echo $SNumber; ?>">
+                                                <?php
+                                                echo"
+                                                <tr>
+                                                    <td><input type='radio' name='date' value=1></td>
+                                                    <td>
+                                                        ".$row['date1']."
+                                                    </td>
+                                                    <td>
+                                                        ".$row['time1']."
+                                                    </td>
+                                                    <td>
+                                                        <select name='location1'>
+                                                        <option value=''>請選擇</option>";
+                                                        $string = $row['location1'];
+                                                        $delimiter = ",";
+                                                        $locations = explode($delimiter, $string);
+                                                        foreach ($locations as $location1) {
+                                                            echo "
+                                                                <option value='".$location1."'>".$location1."</option>";
+                                                        }
+                                                        echo"    
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td><input type='radio' name='date' value=2></td>
+                                                <td>
+                                                    ".$row['date2']."
+                                                </td>
+                                                <td>
+                                                    ".$row['time2']."
+                                                </td>
+                                                <td>
+                                                    <select name='location2'>
+                                                    <option value=''>請選擇</option>";
+                                                    $string = $row['location2'];
+                                                    $delimiter = ",";
+                                                    $locations = explode($delimiter, $string);
+                                                    foreach ($locations as $location2) {
+                                                        echo "
+                                                            <option value='".$location2."'>".$location2."</option>";
+                                                    }
+                                                    echo"    
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            <td><input type='radio' name='date' value=3></td>
+                                                    <td>
+                                                        ".$row['date3']."
+                                                    </td>
+                                                    <td>
+                                                        ".$row['time3']."
+                                                    </td>
+                                                    <td>
+                                                        <select name='location3'>
+                                                        <option value=''>請選擇</option>";
+                                                        $string = $row['location3'];
+                                                        $delimiter = ",";
+                                                        $locations = explode($delimiter, $string);
+                                                        foreach ($locations as $location3) {
+                                                            echo "
+                                                                <option value='".$location3."'>".$location3."</option>";
+                                                        }
+                                                        echo"    
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td><input type='radio' name='date' value=4></td>
+                                                    <td>
+                                                        ".$row['date4']."
+                                                    </td>
+                                                    <td>
+                                                        ".$row['time4']."
+                                                    </td>
+                                                    <td>
+                                                        <select name='location4'>
+                                                        <option value=''>請選擇</option>";
+                                                        $string = $row['location4'];
+                                                        $delimiter = ",";
+                                                        $locations = explode($delimiter, $string);
+                                                        foreach ($locations as $location4) {
+                                                            echo "
+                                                                <option value='".$location4."'>".$location4."</option>";
+                                                        }
+                                                        echo"    
+                                                        </select>
+                                                    </td>
+                                                </tr>";
 
-                                    </tbody>
-                                </table>
-                                <table class="table table-bordered border-warning table-hover">
-                                    <thead style="background-color:#7fad39">
-
-                                        <tr>
-                                            <th colspan=3>
-                                                <font color="#ffffff">是否同意售出給此買家
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><b>買家</b></td>
-                                            <td><b>書籍名稱</b></td>
-                                            <td><b>是否同意</b></td>
-                                        </tr>
-                                        <?php
-
-
-                                        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-                                        session_start();
-                                        $sql = "SELECT buyer, BName, name, b.BNumber ,SNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . " AND date2 != '0000-00-00'";
-
-                                        $result = mysqli_query($link, $sql);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td><a href=agreesell.php?SNumber=", $row['SNumber'],">[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
-                                        }
-                                        ?>
+                                                
+                                                ?>
+                                            </tbody>
+                                    
+                                        </table> 
+                                        <label>
+                                            <span>&nbsp;</span>
+                                            <input type="submit" class="button" value="Send" />
+                                        </label>
+                                    </form>
+                                        
                                     </tbody>
                                 </table>
                             </div>
