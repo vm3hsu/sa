@@ -106,6 +106,42 @@ elseif ($dbaction=="agree"){
     if(mysqli_query($link,$sql)){
         $sql = "delete from record where BNumber = '$BNumber'";
         mysqli_query($link,$sql);
+        $sql = "select * from record r ,book b where SNumber = ".$SNumber." and b.BNumber = r.BNumber";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $buyer = $row['buyer'];
+        $seller = $row['seller'];
+        $BName = $row['BName'];
+        $mail->addAddress($buyermail,$buyerName);
+
+        //Set the subject line
+        $mail->Subject = '輔大2手書交易平台有一筆新的回應!!!!';
+        $mail->Body = '您的訂單編號：'.$SNumber.' 書籍名稱：'.$row['BName'].' 賣家同意取消此筆訂單，歡迎您再次下訂';
+        $mail->send();
+        header("location:message.php?message=取消成功");
+    }
+    else{
+        header("location:message.php?message=取消失敗");
+    }
+}
+elseif ($dbaction=="disagree"){
+    $sql = "UPDATE record SET reason = NULL WHERE SNumber = '$SNumber'";
+    mysqli_query($link, $sql);
+    $sql = "select * from record r ,book b where SNumber = ".$SNumber." and b.BNumber = r.BNumber";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $buyer = $row['buyer'];
+        $seller = $row['seller'];
+        $BName = $row['BName'];
+        $mail->addAddress($buyermail,$buyerName);
+
+        //Set the subject line
+        $mail->Subject = '輔大2手書交易平台有一筆新的回應!!!!';
+        $mail->Body = '您的訂單編號：'.$SNumber.' 書籍名稱：'.$row['BName'].' 賣家不願同意取消此筆訂單，實在非常抱歉';
+        $mail->send();
+    if(mysqli_query($link,$sql)){
+        $sql = "delete from record where BNumber = '$BNumber'";
+        mysqli_query($link,$sql);
         header("location:message.php?message=取消成功");
     }
     else{

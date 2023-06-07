@@ -270,7 +270,7 @@
 
                                         <?php
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-                                        $sql = "SELECT * from book where seller = " . $_SESSION['account'];
+                                        $sql = "SELECT * from book where seller = " . $_SESSION['account']." AND selled = 0";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -309,7 +309,7 @@
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
+                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?&dbaction=agree&SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
                                         }
                                         ?>
 
@@ -339,7 +339,7 @@
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td><a href=agreesell.php?SNumber=", $row['SNumber'],">[同意]</a><a href=delete.php?SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
+                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td><a href=agreesell.php?SNumber=", $row['SNumber'],">[同意]</a><a href=agreedblink.php?agree=no&SNumber=", $row['SNumber'], ">[不同意]</a></td></tr>";
                                         }
                                         ?>
                                     </tbody>

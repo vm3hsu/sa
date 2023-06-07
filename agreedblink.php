@@ -11,7 +11,40 @@
 
 <body>
     <?php
-    session_start();
+    if($_GET['agree'] == "no"){
+        try{
+            include "mail.php";
+        $SNumber = $_GET['SNumber'];
+        $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
+        $sql = "select * from record r, user u where u.account = r.buyer";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $buyermail = $row['email'];
+        $buyerName = $row['name'];
+        $sql = "select * from record r ,book b where SNumber = ".$SNumber." and b.BNumber = r.BNumber";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $buyer = $row['buyer'];
+        $seller = $row['seller'];
+        $BName = $row['BName'];
+        $mail->addAddress($buyermail,$buyerName);
+
+        //Set the subject line
+        $mail->Subject = '輔大2手書交易平台有一筆新的回應!!!!';
+        $mail->Body = '您的訂單編號：'.$SNumber.' 書籍名稱：'.$row['BName'].' 賣家不願將此書賣給您，實在非常抱歉';
+        $mail->send();
+
+
+        $sql = "DELETE FROM `record` WHERE `record`.`SNumber` = ".$SNumber."";
+        $result = mysqli_query($link, $sql);
+        }
+        catch(Exception $e){
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        }
+        header("location:message.php?message=成功不同意");
+    }
+    else{
+        session_start();
     $SNumber = $_POST['SNumber'];
     $date = $_POST['date'];
     if($_POST['location1'] <> ""){
@@ -34,6 +67,7 @@
     $buyer = $row['buyer'];
     $seller = $row['seller'];
     $BName = $row['BName'];
+    $BNumber = $row['BNumber'];
     if($date == 1){
         $date = $row['date1'];
         $time = $row['time1'];
@@ -75,8 +109,12 @@
                 catch(Exception $e){
                     echo "Mailer Error: " . $mail->ErrorInfo;
                 }
+                $sql = "delete from book where BNumber = '$BNumber'";
+                mysqli_query($link, $sql);
                 header("location:message.php?message=交易成功");
         
+    }
+    
 
     ?>
 </body>
