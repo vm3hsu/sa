@@ -27,13 +27,16 @@
         $buyer = $row['buyer'];
         $seller = $row['seller'];
         $BName = $row['BName'];
+        $BNumber = $row['BNumber'];
         $mail->addAddress($buyermail,$buyerName);
 
         //Set the subject line
         $mail->Subject = '輔大2手書交易平台有一筆新的回應!!!!';
         $mail->Body = '您的訂單編號：'.$SNumber.' 書籍名稱：'.$row['BName'].' 賣家不願將此書賣給您，實在非常抱歉';
         $mail->send();
-
+        
+        $sql = "UPDATE `book` SET `selled` = '0' WHERE `book`.`BNumber` = ".$BNumber."";
+        $result = mysqli_query($link, $sql);
 
         $sql = "DELETE FROM `record` WHERE `record`.`SNumber` = ".$SNumber."";
         $result = mysqli_query($link, $sql);
