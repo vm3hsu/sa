@@ -50,7 +50,7 @@
         $date = $row['date4'];
         $time = $row['time4'];
     }
-    $sql = "UPDATE `record` SET `date1` = ".$date.", `time1` = ".$time.", `location1` = ".$location1.", `date2` = '', `time2` = '', `location2` = '', `date3` = '', `time3` = '', `location3` = '', `date4` = '', `time4` = '', `location4` = '' WHERE `record`.`SNumber` = 23;";
+    $sql = "UPDATE `record` SET `date1` = '".$date."', `time1` = '".$time."', `location1` = '".$location1."', date2 = NULL, time2 = NULL, location2 = NULL, date3 = NULL,  time3 = NULL, location3 = NULL,  date4 = NULL,  time4 = NULL,  location4 = NULL WHERE `record`.`SNumber` = ".$SNumber."";
     mysqli_query($link, $sql);
             
             try{
