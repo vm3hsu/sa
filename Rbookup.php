@@ -173,7 +173,8 @@
                         <input type=hidden name="BName" value="<?php echo $RName; ?>">
                         <input type=hidden name="category" value="<?php echo $category; ?>">
                         <input type=hidden name="sendmail" value=1>
-                        <input type=hidden name="SNumber" value="<?php echo $RNumber; ?>">
+                        <input type=hidden name="RNumber" value="<?php echo $RNumber; ?>">
+
                         <h1><font size="6">&emsp;賣家上架書籍表單</font></h1><br>
                         <table width=100%>
                             <tbody width=100%>

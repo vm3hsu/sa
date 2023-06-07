@@ -23,6 +23,7 @@
     $image_new_name = "1";
     $image_upload_path = "bookpicture/";
     $SNumber = $_POST['SNumber'];
+    $RNumber = $_POST['RNumber'];
     
     $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
     if ($dbaction == "insert") {
@@ -34,7 +35,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 $BNumber = $row['BNumber'];
             }
-            echo $BNumber;
+            
             $path = "bookpicture/".$BNumber;
             if (!is_dir($path)) {
                 mkdir($path, 0777, true);
