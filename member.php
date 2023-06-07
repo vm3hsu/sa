@@ -193,8 +193,9 @@
                                                 <td><b>功能</b></td>
                                             </tr>
                                             <?php
+                                            session_start();
                                             $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
-                                            $sql = "SELECT SNumber, BName, price, name, seller , b.BNumber from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller";
+                                            $sql = "SELECT SNumber, BName, price, name, seller , b.BNumber from book b, shoppingcart c, user u where b.BNumber = c.BNumber AND u.account = b.seller AND c.buyer = ".$_SESSION['account']."";
 
                                             $result = mysqli_query($link, $sql);
                                             while ($row = mysqli_fetch_assoc($result)) {
