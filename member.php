@@ -233,7 +233,7 @@
 
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
 
-                                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND b.seller = u.account  AND c.buyer = ".$_SESSION['account']."";
+                                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.buyer = ".$_SESSION['account']." AND u.account != ".$_SESSION['account']."";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
@@ -336,7 +336,7 @@
 
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
                                         session_start();
-                                        $sql = "SELECT buyer, BName, name, b.BNumber ,SNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . " AND date2 != '0000-00-00'";
+                                        $sql = "SELECT buyer, BName, name, b.BNumber ,SNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason like '' AND b.seller = " . $_SESSION['account'] . " AND u.account = r.buyer AND date2 != '0000-00-00'";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
