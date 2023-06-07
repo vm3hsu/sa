@@ -7,7 +7,7 @@
         <ul>
             <li><a href="shop.php?searchtxt=文學院">文學院</a></li>
             <li><a href="shop.php?searchtxt=藝術學院">藝術學院</a></li>
-            <li><a href="shop.php?searchtxt=傳播學院'">傳播學院</a></li>
+            <li><a href="shop.php?searchtxt=傳播學院">傳播學院</a></li>
             <li><a href="shop.php?searchtxt=教育學院">教育學院</a></li>
             <li><a href="shop.php?searchtxt=醫學院">醫學院</a></li>
             <li><a href="shop.php?searchtxt=理工學院">理工學院</a></li>
