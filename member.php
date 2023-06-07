@@ -233,7 +233,7 @@
 
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
 
-                                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.buyer = ".$_SESSION['account']." AND u.account != ".$_SESSION['account']."";
+                                        $sql = "SELECT BName, price , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.buyer = ".$_SESSION['account']." AND u.account != ".$_SESSION['account']." AND u.account = r.seller";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
