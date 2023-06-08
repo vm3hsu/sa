@@ -20,12 +20,8 @@
     $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
     
 
-    $sql = "select * from user u where u.name = '$target' ";
-    $result = mysqli_query($link, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $buyer = $row['name'];
 
-    $sql = "INSERT INTO `rate` (`rateNumber`, `writer`, `target`, `content`) VALUES (NULL, ".$_SESSION['name'].", $buyer, '$content')";
+    $sql = "INSERT INTO `rate` (`rateNumber`, `writer`, `target`, `content`) VALUES (NULL, '".$_SESSION['name']."', '$target', '$content')";
     if(mysqli_query($link, $sql)){
 
         header("location:message.php?message=新增成功");
