@@ -148,7 +148,7 @@
                                 session_start();
                                 if($_SESSION['name']=="")
                                 {
-                                    echo"<li><a href='QA.php?show_alert=true'>提問專區</a></li>";
+                                    echo"<li class='active'><a href='QA.php?show_alert=true'>提問專區</a></li>";
                                 }
                                 else
                                 {
