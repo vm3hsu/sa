@@ -208,11 +208,14 @@
                       <hr size='2px' align='top' width='100%'>
                             <p style='margin:10px 0 0 0;'><span>賣家：<a href=review.php?name=".$row['name']." style='color:orange;'>".$row['name']."</a>;</span></p>
                       <p style='margin:10px 0 0 0;'><span>售價：".$row['price'].";</span></p>
-                      <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>
+                      <p style='margin:10px 0 0 0;'><span>書況補充說明：".$row['BCondition'].";</span></p>";
+                        if ($_SESSION['name']<>""){
 
-                            <input type='submit' value='加入購物車'>
-                            
-                     </div>";
+                            echo"<input type='submit' value='加入購物車'>";
+                        }
+                        else{
+                        }
+                        echo"</div>";
                         }
                         ?>
                     </div>
