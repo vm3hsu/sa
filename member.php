@@ -309,11 +309,11 @@
 
                                         $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
                                         session_start();
-                                        $sql = "SELECT buyer, BName, reason , name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason not like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . "";
+                                        $sql = "SELECT buyer, BName, reason ,SNumber, r.seller, name, b.BNumber FROM record r, book b, user u WHERE r.BNumber = b.BNumber AND r.reason not like '' AND b.seller = " . $_SESSION['account'] . " AND u.account != " . $_SESSION['account'] . "";
 
                                         $result = mysqli_query($link, $sql);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?&dbaction=agree&SNumber=", $row['SNumber'], "BNumber=", $BNumber, ">[不同意]</a></td></tr>";
+                                            echo "<tr><td><a href=review.php?name=", $row['name'], ">", $row['name'], "</a></td><td>", $row['BName'], "</td><td>", $row['reason'], "</td><td><a href=delete.php?SNumber=", $row['SNumber'], "&seller=", $row['seller'], "&BNumber=", $row['BNumber'], "&dbaction=agree>[同意]</a><a href=delete.php?&dbaction=disagree&SNumber=", $row['SNumber'], ">[不同意]</a></td></tr>";
                                         }
                                         ?>
 
