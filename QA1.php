@@ -197,7 +197,7 @@
                                         <h3><font size="5">&emsp;負評專區___待您送出後我們會將此評價顯示在對象的個人檔&emsp;<br>&emsp;案中</font>
                                             <hr size="2px" align="top" width="100%">
                                         </h3>
-                                        <form>
+                                        <form method="post" action="QAdblink.php">
                                             &emsp;投訴對象名稱：<input type="text" name="target">                                        
                                             <br><br>
                                             <td>
@@ -218,7 +218,7 @@
                                         <h3><font size="5">&emsp;好評專區___待您送出後我們會將此評價顯示在對象的個人檔&emsp;<br>&emsp;案中</font>
                                             <hr size="2px" align="top" width="100%">
                                         </h3>
-                                        <form>
+                                        <form method="post" action="QAdblink.php">
                                             &emsp;好評對象名稱：<input type="text" name="target">                                        
                                             <br><br>
                                             &emsp;給予好評原因(請詳細說明):<br>&emsp;<textarea name="content" rows="5" cols="60"></textarea>
