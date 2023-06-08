@@ -21,8 +21,7 @@ elseif ($row = mysqli_fetch_assoc($result) ){
   }
 
 } else {
-  echo $target;
-  echo 
+  
   header("location:message.php?message=投訴失敗，查無此人");
 }
 

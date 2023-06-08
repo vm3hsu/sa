@@ -211,6 +211,7 @@
                                                             <input type="radio" name="new" value="否">否
                                                         </td>
                                                     </tr><br><br>
+                                            &emsp;被放鴿子的交易書本:<input type="text" name="tbook"><br><br>
                                             &emsp;投訴原因(請詳細說明):<br>&emsp;<textarea name="content" rows="5" cols="60"></textarea>
                                             <input type="submit" value="送出資料"><br>
                                             <br>

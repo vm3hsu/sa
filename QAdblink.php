@@ -15,6 +15,8 @@
     $new = $_POST['new'];
     $target = $_POST['target'];
     $content = $_POST['content'];
+    $tbook = $_POST['tbook'];
+
     
     
     $link = mysqli_connect('localhost', 'root', '12345678', 'sa');
@@ -34,12 +36,12 @@
 
 
     if ($new == "是"){
-    $sql = "select b.BNumber from record r, book b where r.seller = ".$_SESSION['account']." AND r.buyer = $buyer AND r.BNumber = b.BNumber AND r.seller = b.seller";
+    $sql = "select b.BNumber,b.BName from record r, book b where r.seller = ".$_SESSION['account']." AND r.BNumber = b.BNumber AND r.seller = b.seller And b.BName = '$tbook'";
     $result = mysqli_query($link, $sql);
     $row = mysqli_fetch_assoc($result);
     $BNumber = $row['BNumber'];
-    
-    $sql ="UPDATE `book` SET `selled` = '0' WHERE `book`.`BNumber` = $BNumber";
+    $sql ="UPDATE `book` SET `selled` = '0' WHERE `BNumber` = $BNumber";
+
     mysqli_query($link, $sql);
     }
             
