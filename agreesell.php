@@ -132,6 +132,7 @@
                                     echo"<li><a href='QA1.php'>提問專區</a></li>";
                                 }
                             ?>
+                            <?php
                             session_start();
                             if ($_SESSION['name'] == "") {
                                 echo "<li class='active'><a href='member2.php'>會員專區</a></li>";
